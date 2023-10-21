@@ -1,0 +1,9 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanssinhala.css);
+@import url(https://cdn.rawgit.com/mooniak/moonface-font/master/fonts/webfonts/fonts.css);
+
+
+.subtitle {
+  font-size: 36px;
+  line-height: 1.25;
+  font-weight: 100;
+}
