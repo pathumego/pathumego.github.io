@@ -1,8 +1,0 @@
-# Site settings
-title: Pathum Egodawatta
-
-# Build settings
-markdown: kramdown
-exclude: ["README.md"]
-sass:
-  style: compressed
