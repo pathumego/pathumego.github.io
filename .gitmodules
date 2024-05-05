@@ -1,0 +1,3 @@
+[submodule "vishvakarama-labs"]
+	path = vishvakarama-labs
+	url = https://github.com/pathumego/vishvakarama-labs
