@@ -1,0 +1,313 @@
+html {
+overflow:hidden;
+}
+
+
+	body {
+	
+		height:100%;
+		width:100%;
+		margin:0;padding:0;
+		font: Letter Gothic Std, Inconsolata, Monaco, monospace;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:12px;
+		
+	}
+
+	#wrapper {
+		width:100%;
+		height:100%;
+		position:absolute;
+		top:0;left:0;
+		background-color:#ccc;
+		overflow:hidden;
+	}
+
+	#mask {
+		width:800%;
+		height:100%;
+
+		background-color:#eee;
+	}
+
+	.item {
+		width:12.5%;
+		height:100%;
+		float:left;
+		background-color:#000;
+		//position:fixed;
+	}
+	
+		.itemimg {
+		width:auto;
+		height:100%;
+		float:left;
+		background-color:#000;
+		//position:fixed;
+	}
+	
+
+	.content {
+		width:100%;
+		height:100%;
+		
+		margin:0 auto;
+		background-color:#fff;
+		position:relative;
+	}
+		.contentimg {
+		width:100% ;
+		height:100%;
+		
+		margin:0 auto;
+		background-color:#fff;
+		position:relative;
+	}
+	
+	
+	.selected {
+		background:#fff;
+		font-weight:700;
+	}
+
+	.clear {
+		clear:both;
+	}
+
+	.hidden{
+		display: none;
+	}
+	
+
+
+	
+	
+	#connect
+	{
+        position:fixed;
+        left:0px;
+		top: 0%;
+        float:left;
+		z-index:10;
+    }
+	
+	#contactcontent {
+		font-family:Inconsolata, Monaco, monospace;
+	    padding-top:100px;
+		padding-left:50px;
+		float:left;
+		font-size:12px;
+		
+		
+	}
+	
+		#contacttwit{
+		font-family:Inconsolata, Monaco, monospace;	
+		font-size:12px;
+		padding-top:100px;
+	    padding-left:50px;
+		width:250px;
+		float:left;
+		
+	}
+	
+	
+			
+	
+	#twitter_div { font-family:Inconsolata, Monaco, monospace; font-size: 5px; color: #000; }
+	#twitter_div img {float:left;}
+	#twitter_update_list{font-size: 12px; font-color:#999;}
+	
+
+	
+	
+	
+	
+a:link {
+	text-decoration: none;
+	color: gray;
+	outline:none;
+
+}
+a:visited {
+	text-decoration: none;
+	color: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: black;
+	background-color: none;
+	
+}
+a:active {
+	text-decoration: none;
+	color: none;
+}
+
+h2 {
+font-family:Inconsolata, Monaco, monospace;
+
+}
+
+						
+				
+			h3 a{}
+			
+		#team {
+		
+		float:left;
+		position:relative;	
+		align:centre;
+		top: 120px;
+		width:auto;
+		height:auto;
+		padding-left:30px;
+					
+	}	
+	
+	
+	#description{
+	font-family:Inconsolata, Monaco, monospace;
+	position:absolute;		
+		width:auto;
+		height:auto;
+		top:200px;
+						
+	}		
+	
+			#portfolio {
+				
+		position:absolute;		
+		width:auto;
+		height:auto;
+		top:0%;
+		padding:30px;
+		padding-left:300px;
+		font-size:12px;
+		font-family:Inconsolata, Monaco, monospace;
+				
+	}	
+	
+
+/* Tooltip */
+
+
+span.tip {
+    border-bottom: 0px solid #eee;
+}
+	
+	
+img {border: none;}
+ul.gallery {
+	width: 708px;
+	list-style: none;
+	margin: 0 auto; padding: 0;
+}
+ul.gallery li {
+	float: left;
+	margin: 0px; padding: 0;
+	text-align: center;
+	border: none;
+	display: inline; /*--Gimp Fix aka IE6 Fix--*/
+}
+ul.gallery li a.thumb {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	padding: 0px;
+	border-bottom: 0px solid #000;
+	cursor: pointer;
+}
+ul.gallery li span { /*--Used to crop image--*/
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	display: block;
+}
+ul.gallery li a.thumb:hover {
+	background: #333;
+}
+ul.gallery li h2 {
+	font-size: 1em;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin: 0; padding: 0px;
+	background: #f0f0f0;
+	border-top: 1px solid #fff; /*--Subtle bevel effect--*/
+}
+ul.gallery li a {text-decoration: none; color: #777; display: block;}	
+
+input.btn { 
+	  color:#fff; 
+	  font-family:Inconsolata, Monaco, monospace;
+	  font: bold 84%; 
+	  background-color:#000; 
+	  border:0px solid; 
+	  
+	}  
+	
+input.btnhov { 
+		color:#000;
+		font: bold 100%; 
+		background-color:#fcb74c;
+	  }	  
+input {
+ background-color: #ccc;
+ border:0px solid; 
+  border-color: #000000;
+  font-family:Inconsolata, Monaco, monospace;
+}	  
+
+textarea {
+ background-color: #ccc;
+ border:0px solid; 
+  border-color: #000000;
+}
+
+
+.texta_effect:hover {
+	border-color: #000;
+	border-width: 1px;
+}
+
+.texta_effect:focus {
+	border-color: #000;
+	border-width: 5px;
+}
+
+
+/* Tumblr Google Feed API */
+.gfc-results
+{
+    
+	font-family: Inconsolata, Monaco, monospace;
+    color:#444444;  
+}
+ 
+.gfc-resultsHeader
+{
+    
+	border: none !important;
+}
+ 
+.gfc-result
+{
+    
+    padding: 0;
+}
+ 
+a.gf-title
+{
+    
+	font-size:.875em;
+}
+ 
+.gf-relativePublishedDate
+{
+	display:none !important;
+}
+ 
+.gf-snippet
+{
+    display:none;
+}

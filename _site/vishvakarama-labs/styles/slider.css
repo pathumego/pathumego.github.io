@@ -1,0 +1,38 @@
+#content-slider {
+	 
+      width: 490px;
+      height: 6px;
+      margin: 0px;
+      background: #BBBBBB;
+      position: relative;
+    }
+
+    .ui-slider-handle {
+      width: 8px;
+      height: 14px;
+      position: absolute;
+      top: -4px;
+      background: #000;
+      border: solid 0px black;
+    }
+
+    #content-scroll {
+      width: 500px;
+      height: 100px;
+      margin-top: 10px;
+      overflow: hidden;
+      border: solid 0px black;
+    }
+
+    #content-holder {
+      width: 1500px;
+      height: 270px;
+    }
+
+    .content-item {
+      width: 290px;
+      height: 270px;
+      padding: 5px;
+      float: left;
+  }	
+				
