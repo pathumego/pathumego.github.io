@@ -1,13 +1,17 @@
 
 
+
+
 @font-face {
-  font-family:"Maname";
-  src:url("../fonts/Maname.woff2") format("woff2"),url("./fonts/Maname.woff") format("woff"),url("./fonts/Maname.ttf") format("opentype");
-  font-style:normal;font-weight:400;
+  font-family: 'Yakkala DEV';
+  src: url('https://dlzxjqdbhxhslzirdniv.supabase.co/storage/v1/object/public/fonts-cdn/fonts/Yakkala-Regular_Version%200.010;%20%5Bfefb6e8%5D-dev_v1768943031478.woff2?v=1') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-  font-family:"Maname";
+  font-family:"Yakkala DEV";
 }
 
 h1 {

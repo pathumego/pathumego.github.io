@@ -1,0 +1,112 @@
+pathumego website  
+I am Pathum Egodawatta, a typeface designer and consultant from (Sri) Lanka. I specialize in Sinhala script and South Asian visual culture. As a designer, I am interested in all things textual that meet at the intersection of culture and technology. I make typefaces, lead font projects, teach typography, organize knowledge projects and communities around writing systems of South Asia. 
+
+Interest areas
+
+- Type design, fonts and encoding technologies  
+- Design education, teaching typography  
+- Libre software and open culture  
+- Buddhism, consciousness and mindfulness  
+- Lankan visual identity  
+    
+  Workshops  
+- Crafting Type  
+- Understanding Graphic Design  
+- Understanding Typography  
+- Designing for Three Languages; multilingual typography for Sri Lanka 
+
+  Lectures
+
+- Licensing creative works  
+- Choosing fonts / where to find fonts  
+- Sinhala Typography Primer
+
+\-	Teaching design with Libre Graphics Tools  
+\-	Design for Social Change
+
+Research 
+
+* Kundaliya \- The disappearance of Kundaliya, the Sinhala punctuation.(2017)  
+* Milestones of Sinhala typography in the 19th century Ceylon (2016)  
+* A typographic history of the Sri Lankan political conflict (2014)  
+* Overview of development of Sinhala typography (2013)  
+* State of Sinhala digital typography (2017)
+
+
+  ## Talks
+
+* How to Build a Fonts industry in a bankrupt country? Sri Lanka Desgin Festival  
+* ‘Kundaliya’, the Sinhala punctuation mark.Typoday 2017, Colombo, Sri Lanka  
+* ‘Indic text capabilities in Libre Graphics software’, Libre Graphics Meeting 2016 \- London  
+* ‘Jumping into Libre Graphics’ Libre Graphics Meeting 2015, Toronto, Canada. (Remote presentation)  
+* Understanding Fonts as infrastructure Panel discussion at ATyPI Working Seminar Colombo 2019  
+* All about fonts Sustainable Education Foundation  
+* South Asian Typography and Understanding Design Colonization  
+* ‘Which Sinhala fonts do users prefer?’ Typoday 2015 Mumbai 2017  
+* ‘Why Libre Fonts?’ TAB TTF, Thailand 2015  
+* ‘Enabling Sinhala web’ Google I/O Extended Colombo 2015  
+* ‘Other-Letter, A hybrid Sinhala Tamil typeface’ Typoday 2014, Pune, India  
+* PechaKucha 2014 Colombo
+
+  ## 
+
+    
+    
+    
+    
+  
+
+
+# Knowledge Exchange Projects
+
+**Typoday 2017**  
+Typoday \- 2017 is an international event organized by Department of Integrated Design, University of Moratuwa (DID, UoM) in collaboration with the Industrial Design Centre (IDC) from India, Indian Institute of Technology Bombay (IIT Bombay) with support from India Design Association (InDeAs) and Aksharaya. Workshops and research presentations were held on February 23, 24 and 25 at the UoM premises as well as at the Western Province Aesthetic Resort. I was part of the organizing committee and was responsible for raising funds, organizing partnerships and promoting the event in the international community.  
+
+This event opened up new creative opportunities and collaborations to all those who were interested in fonts and typography in Sri Lanka and was a key milestone that formed the Akuru Collective in Sri Lanka.
+
+**ATypI Working Seminars 2019**  
+In partnership with FARU (Faculty of Architecture Research Unit), University of Moratuwa Sri Lanka, and the Akuru Collective, ATypI (Association Typographique Internationale) held their Working Seminars in Colombo on 22–23 March 2019\.  This was the first Working Seminar in 27 years for ATypI, and certainly the first of its kind in the region with an exclusive focus on teaching typography. The main theme for the Working Seminar was the teaching of typography and typeface design in universities, colleges, and self-contained courses in the broader region.
+
+([https://workingseminars.atypi.org/working-seminar-colombo/](https://workingseminars.atypi.org/working-seminar-colombo/))
+
+**ColomboType**  
+Colombo Type started on one rainy Saturday evening in Colombo, when a room full of type aficionados of all shapes and sizes gathered, united by their love for Typography. The common opinion was to provide a platform to share common interests,  resources, and raise awareness regarding Sri Lankan typography. Since then Colombo Type has opened space for interesting discussions around the currently extinct set of Sinhala numerals, anatomy of Sinhala Letters, process behind logotype designs as well as successful workshops on Experiencing Calligraphy and Old Sinhala Display Type.
+
+Dutch–Ceylon Typographic Heritage Project   
+A series of knowledge generation and exchange projects aimed at exploring the shared cultural heritage between Sri Lanka and The Netherlands in areas of typography, printing, graphic design, and type design. This project highlights the Sinhala and Tamil type-making and typography work by the Dutch Press in Ceylon in the 18th century.
+
+**Galle Font Project**   
+Galle Font project is aimed at developing a  digital typeface(font) based on the original letterforms designed by the Dutch printer Gabriel Shcade and his successors at the type foundry of the Dutch Press in Ceylon where We see an unique opportunity for preservation of shared cultural heritage. A digital revival of the letterforms of the Dutch Press is already in development. The research work concluded last year and a proof of concept draft was designed. As we are about to start the second phase of the project, the typeface will be developed and released under a Free and Open source license for public use and study in the coming year.
+
+**AkuruCon 2018**  
+AkuruCon was organized in collaboration with the Embassy of Netherlands, Sri Lanka to celebrate the 280th anniversary of the introduction of movable type in Sri Lanka. The conference consisted of several workshops and seminars focused on the shared history of typography between Sri Lanka and the Netherlands. Over a hundred students and representatives from design schools, professionals from advertising and design industries and the general public enthusiastic in Sinhala and Tamil letterforms, participated in AkuruCon 2018 to share and sharpen their skills in typography.
+
+**Design Educators Forum**  
+The Typography Educators Forum was organized in hopes of facilitating and inspiring the development of techniques and exercises for teaching typography and typographic subjects within the context of execution and crafting in the undergraduate level (graphic and visual communication) design courses. Participants were encouraged to actively engage with other graphic design educators through a series of workshops, with the intention of developing or improving on fundamental tools to help students practice better typographic execution and crafting.
+
+**Typography for Children’s Literature**  
+*Typography for Children’s Literature* was a workshop organized by IBBY SRI LANKA (The International Board on Books for Young People) on 26th January 2019 to raise awareness on how to design children's story books, and the use of Sinhala typography. Dr. Sumanthri Samarawickrama, Pathum Egodawatta and Rashandi Vihara Porambage, representing Akuru Collective and Department of Integrated Design, University of Moratuwa contributed to the event as resource persons.  The event was held at Sri Lanka Print Media Academy with the participation of a group of 25 enthusiast graphic designers, writers and illustrators.
+
+CraftingType Workshops;
+
+*Crafting Type Singapore 2020*  
+I did a workshop in Singapore as part of Crafting type
+
+InPress
+
+* [Finding a Common Language Reconciliation and revival through letterforms](http://www.commarts.com/column/finding-common-language) Communication Arts  
+* [Freeing Fonts](http://www.indipool.com/freeing-fonts/) Pool India  
+* Echelon  
+* [StopTorture, a trilingual campaign by TEMPLO](http://kyoorius.com/2015/01/stop-torture-templo) Kyoorius  
+* [The Duality of Language : Marking International Mother Language Day](http://groundviews.org/2016/02/19/the-duality-of-language-marking-international-mother-language-day/) Groundviews
+
+
+  
+
+
+  
+
+
+  
+
+  
