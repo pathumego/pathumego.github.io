@@ -6,6 +6,7 @@ layout: default
 
   <body>
 
+<div class="pe-text" id="pe-text">peපැெப</div>
 
 <h1>pathumego පැතුම්</h1>
 
@@ -33,6 +34,16 @@ layout: default
   Interest areas; #type-design, #fonts-encoding-technologies #teaching-typography, #floss-software, #meditation, #mindfullness
 
 </p>
+
+<script>
+document.addEventListener('mousemove', (e) => {
+  const peText = document.getElementById('pe-text');
+  const width = window.innerWidth;
+  const mouseX = e.clientX;
+  const weightValue = Math.round((mouseX / width) * 700) + 100;
+  peText.style.fontVariationSettings = `'wght' ${weightValue}`;
+});
+</script>
 
   </body>
 </html>

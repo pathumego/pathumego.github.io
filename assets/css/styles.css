@@ -10,6 +10,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'peVF';
+  src: url('/assets/font/peVF.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+.pe-text {
+  font-family: 'peVF', sans-serif;
+  font-size: 6rem;
+  font-variation-settings: 'wght' 100;
+  transition: font-variation-settings 0.1s ease-out;
+  text-align: center;
+  margin: 2rem 0;
+}
+
 body {
   font-family:"Yakkala DEV";
 }

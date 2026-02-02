@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="icon" href="/assets/images/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/images/favicon.png">
-
+    <link rel="stylesheet" href="https://dlzxjqdbhxhslzirdniv.supabase.co/functions/v1/serve-client-css?font_id=dab219ce-69a6-43ac-9833-362c54310128&client_id=f1de3fb3-9cb7-418c-9470-00ebb2269656">
     <!-- Facebook integration -->
     <meta property="og:title" content="pathum egodawatta" />
     <meta property="og:image" content="https://" />
@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="icon" href="/assets/images/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/images/favicon.png">
-
+    <link rel="stylesheet" href="https://dlzxjqdbhxhslzirdniv.supabase.co/functions/v1/serve-client-css?font_id=dab219ce-69a6-43ac-9833-362c54310128&client_id=f1de3fb3-9cb7-418c-9470-00ebb2269656">
     <!-- Facebook integration -->
     <meta property="og:title" content="pathum egodawatta" />
     <meta property="og:image" content="https://" />
@@ -98,7 +98,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="icon" href="/assets/images/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/images/favicon.png">
-
+    <link rel="stylesheet" href="https://dlzxjqdbhxhslzirdniv.supabase.co/functions/v1/serve-client-css?font_id=dab219ce-69a6-43ac-9833-362c54310128&client_id=f1de3fb3-9cb7-418c-9470-00ebb2269656">
     <!-- Facebook integration -->
     <meta property="og:title" content="pathum egodawatta" />
     <meta property="og:image" content="https://" />
@@ -124,6 +124,7 @@
 
   <body>
 
+<div class="pe-text" id="pe-text">peපැெப</div>
 
 <h1>pathumego පැතුම්</h1>
 
@@ -151,6 +152,16 @@
   Interest areas; #type-design, #fonts-encoding-technologies #teaching-typography, #floss-software, #meditation, #mindfullness
 
 </p>
+
+<script>
+document.addEventListener('mousemove', (e) => {
+  const peText = document.getElementById('pe-text');
+  const width = window.innerWidth;
+  const mouseX = e.clientX;
+  const weightValue = Math.round((mouseX / width) * 700) + 100;
+  peText.style.fontVariationSettings = `'wght' ${weightValue}`;
+});
+</script>
 
   </body>
 </html>
