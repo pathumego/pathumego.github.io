@@ -4,45 +4,143 @@ layout: default
 
 {% include header.html %}
 
+<style>
+  html, body {
+    background-color: #fffdf6 !important;
+    color: #000000 !important;
+  }
+  * {
+    color: inherit;
+  }
+</style>
+
   <body>
 
-<div class="pe-text" id="pe-text">peපැெப</div>
+<div class="pe-text" id="pe-text">peපැபெ෴</div>
 
-<h1>pathumego පැතුම්</h1>
+
+
+
+  <p class="txt">
+Pathum Egodawatta is a interdisciplinary designer, </br> 
+thinker, and catalyst working at the intersections of type, text, design, code, and culture.</p>
 
 <p class="txt">
 
-  ආයුබෝවන්! I am Pathum Egodawatta <br /> —An expert in all things textual that meet at the intersections of design, culture, technology and bussiness. 
 </p>
 
-  <p class="txt">
-
-  I help individuals, organisations and businesses better understand their purpose and communicate it clearly with concise writing and compelling typography that convert to results. 
-</p>
 
 <p class="txt">
   ෴෴෴෴෴෴
 </p>
 
 <p class="txt-2">
-  I make <a href="https://mooniak.com/">fonts</a>, provide typography + textual technology consultancy and conduct workshops.
-
+Pathum specializes in Sinhala and Tamil script typography and South Asian visual cultures. Based in Colombo, Sri Lanka, his practice sits at the intersection of culture and technology, 
+spanning typography, typeface design, archival research, language technology, and community building.
 </p>
+
 
 
 <p class="hero-txt">
-  Interest areas; #type-design, #fonts-encoding-technologies #teaching-typography, #floss-software, #meditation, #mindfullness
+He is the founder and Managing Director of Mooniak, a type foundry and typographic design studio pioneering Sinhala+ Tamil multi script fonts and maintaining a large collection of Free and Open Source font projects. He co-founded Akuru Collective, a community and led events including  three major international typography conferences in Sri Lanka to inspire interest in letterforms and writing systems. He currently serves as the Chief Curator of the W A Silva Museum for Language, Literature and Typography in Colombo, working to preserve and make accessible Sri Lanka's language and typographic heritage. He teaches typography, talks about design and ponders about future of civilisation.
 
 </p>
 
+
 <script>
-document.addEventListener('mousemove', (e) => {
+(function() {
   const peText = document.getElementById('pe-text');
-  const width = window.innerWidth;
-  const mouseX = e.clientX;
-  const weightValue = Math.round((mouseX / width) * 700) + 100;
-  peText.style.fontVariationSettings = `'wght' ${weightValue}`;
-});
+
+  // Animation state
+  let autoWeight = 400;
+  let autoSlant = 0;
+  let autoStroke = 100;
+  let weightDirection = 1;
+  let slantDirection = 1;
+  let strokeDirection = -1;
+
+  // Mouse influence (0 = no mouse, values updated on mousemove)
+  let mouseInfluence = 0;
+  let mouseWeight = 400;
+  let mouseSlant = 0;
+  let mouseStroke = 100;
+
+  // Animation ranges (adjust based on your font's axes)
+  const WEIGHT_MIN = 100;
+  const WEIGHT_MAX = 800;
+  const SLANT_MIN = 0;
+  const SLANT_MAX = 12;
+  const STROKE_MIN = 20;
+  const STROKE_MAX = 100;
+
+  // Animation speeds
+  const WEIGHT_SPEED = 3;
+  const SLANT_SPEED = 0.8;
+  const STROKE_SPEED = 2;
+
+  // Mouse fade decay
+  const MOUSE_DECAY = 0.02;
+
+  // Handle mouse movement
+  document.addEventListener('mousemove', (e) => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    // Calculate mouse-driven values
+    mouseWeight = Math.round((mouseX / width) * (WEIGHT_MAX - WEIGHT_MIN)) + WEIGHT_MIN;
+    mouseSlant = ((mouseY / height) * (SLANT_MAX - SLANT_MIN)) + SLANT_MIN;
+    mouseStroke = Math.round((1 - mouseY / height) * (STROKE_MAX - STROKE_MIN)) + STROKE_MIN;
+
+    // Boost mouse influence
+    mouseInfluence = 1;
+  });
+
+  // Handle mouse leave - start fading back to auto animation
+  document.addEventListener('mouseleave', () => {
+    // mouseInfluence will decay in the animation loop
+  });
+
+  // Animation loop
+  function animate() {
+    // Update auto animation values
+    autoWeight += WEIGHT_SPEED * weightDirection;
+    if (autoWeight >= WEIGHT_MAX || autoWeight <= WEIGHT_MIN) {
+      weightDirection *= -1;
+      autoWeight = Math.max(WEIGHT_MIN, Math.min(WEIGHT_MAX, autoWeight));
+    }
+
+    autoSlant += SLANT_SPEED * slantDirection;
+    if (autoSlant >= SLANT_MAX || autoSlant <= SLANT_MIN) {
+      slantDirection *= -1;
+      autoSlant = Math.max(SLANT_MIN, Math.min(SLANT_MAX, autoSlant));
+    }
+
+    autoStroke += STROKE_SPEED * strokeDirection;
+    if (autoStroke >= STROKE_MAX || autoStroke <= STROKE_MIN) {
+      strokeDirection *= -1;
+      autoStroke = Math.max(STROKE_MIN, Math.min(STROKE_MAX, autoStroke));
+    }
+
+    // Decay mouse influence over time
+    mouseInfluence = Math.max(0, mouseInfluence - MOUSE_DECAY);
+
+    // Blend between auto and mouse values
+    const finalWeight = Math.round(autoWeight * (1 - mouseInfluence) + mouseWeight * mouseInfluence);
+    const finalSlant = autoSlant * (1 - mouseInfluence) + mouseSlant * mouseInfluence;
+    const finalStroke = Math.round(autoStroke * (1 - mouseInfluence) + mouseStroke * mouseInfluence);
+
+    // Apply font variation settings
+    // Common axis tags: wght (weight), slnt (slant), ital (italic), wdth (width), YOPQ (stroke)
+    peText.style.fontVariationSettings = `'wght' ${finalWeight}, 'slnt' ${finalSlant}, 'YOPQ' ${finalStroke}`;
+
+    requestAnimationFrame(animate);
+  }
+
+  // Start animation
+  animate();
+})();
 </script>
 
   </body>

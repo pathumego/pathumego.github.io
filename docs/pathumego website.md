@@ -1,5 +1,30 @@
 pathumego website  
-I am Pathum Egodawatta, a typeface designer and consultant from (Sri) Lanka. I specialize in Sinhala script and South Asian visual culture. As a designer, I am interested in all things textual that meet at the intersection of culture and technology. I make typefaces, lead font projects, teach typography, organize knowledge projects and communities around writing systems of South Asia. 
+
+I am a interdiciplinary designer, thinker, catalist and builder of things at the intersection of type, text, design, code and culture. 
+</p>
+
+<p class="txt">
+Pathum is the founder of mooniak, the leader in multilingual fonts, typography and text technology in Sri Lanka. 
+Pathum cofounded the Akuru Collective–a community of letterform enthusisasts in Sri Lanka—and led it from 2017 to 2025. 
+Pathum is currently the Mangaing Director and the Chief Curator of the W A Silva Museum for Language and Literature and Typography in Colombo, Sri Lanka.
+Pathum is known as the modern authoristy on Sinhala type design and Sinhala-Tamil multiscript typography. His work in typography expand from archival research, documentation, typeface design, font licensing to contributions to encoding standards and text rendering technologies and orgnising knowledge exchange projects.
+
+Pathum teach typography and design and writes and talks about the future of South Asia and cultural identites.
+
+I am Pathum Egodawatta, a typeface designer and consultant from (Sri) Lanka. I specialize in Sinhala script and South Asian visual culture. As a designer, I am interested in all things textual that meet at the intersection of culture and technology. I make typefaces, lead font projects, teach typography, organize knowledge projects and communities around writing systems of South Asia. Pathum Egodawatta is a Sri Lankan type designer and font engineer with vested interest in infrastructure for cultural work in South Asia. Pathum primarily specializes in typeface design and typography of Sinhala script and language technology and encoding of South Asian scripts. He received his MA in Typeface Design from the University of Reading with a distinction in 2016 and a BA in Graphic Design with Distinction from the Academy of Design (AOD), Colombo, in 2013. 
+
+In 2015 Pathum co-founded Mooniak, (mooniak.com) a type foundry and a typographic design studio. Apart from pioneering Sinhala fonts for the web and maintaining a large collection of Free and Open Source font projects, Mooniak is active in the publishing industry and provides consultancy on font licensing, typographic design, trilingual communications and language technologies. 
+
+With the interest in open culture and open source Pathum has been an active contributor to leading open-source font development software and documentation and standards such as Unicode and SLS1134 for Sinhala script encoding. In 2017, he co-founded Akuru Collective, a community focused on inspiring interest in typography (akuru.xyz) which has conducted over 30 community events and three major conferences in Sri Lanka on typography. Since 2020, Pathum has been a director of Institute of Typography—Sri Lanka, with the primary focus on developing and sustaining W A Silva Museum for Language, Literature and Typography in Colombo 6.
+
+He gained international attention from the regional design community for his graduation project at AOD, "Amma," a hybrid of Sinhala and Tamil letterforms. Pathum worked as a consultant for the Google Fonts services from 2013 to 2015, focusing on the Indian region and has worked as a designer, consultant, and project manager on international font projects for major international technology companies and international type foundries.
+
+In 2015 Pathum co-founded Mooniak, (mooniak.com) a type foundry and a typographic design studio. Apart from pioneering Sinhala fonts for the web and maintaining a large collection of Free and Open Source font projects, Mooniak is active in the publishing industry and provides consultancy on font licensing, typographic design, trilingual communications and language technologies. 
+
+With the interest in open culture and open source Pathum has been an active contributor to leading open-source font development software and documentation and standards such as Unicode and SLS1134 for Sinhala script encoding. In 2017, he co-founded Akuru Collective, a community focused on inspiring interest in typography (akuru.xyz) which has conducted over 30 community events and three major conferences in Sri Lanka on typography. Since 2020, Pathum has been a director of Institute of Typography—Sri Lanka, with the primary focus on developing and sustaining W A Silva Museum for Language, Literature and Typography in Colombo 6.
+
+
+
 
 Interest areas
 
