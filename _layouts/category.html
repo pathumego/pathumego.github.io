@@ -1,0 +1,165 @@
+---
+layout: default
+dark_theme: true
+---
+
+{% assign category_projects = site.projects | where: "category", page.category_slug | sort: "date" | reverse %}
+{% assign subcategories = category_projects | map: "subcategory" | uniq | sort %}
+{% assign work_types = category_projects | map: "type" | uniq | sort %}
+
+<div class="category-page">
+  <!-- Sidebar -->
+  <aside class="category-sidebar">
+    <h1 class="category-sidebar__title">{{ page.title }}</h1>
+
+    {% if page.category_intro %}
+    <p class="category-sidebar__intro">{{ page.category_intro }}</p>
+    {% endif %}
+
+    <!-- Subcategory filters -->
+    <div class="filter-section">
+      <div class="filter-section__label">Type</div>
+      <div class="filter-pills" id="subcat-filters">
+        <button class="filter-pill active" data-filter="all" data-group="subcat">All</button>
+        {% for subcat in subcategories %}
+          {% if subcat and subcat != "" %}
+          <button class="filter-pill" data-filter="{{ subcat }}" data-group="subcat">
+            {{ subcat | replace: "-", " " | capitalize }}
+          </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Work type filters -->
+    <div class="filter-section">
+      <div class="filter-section__label">Context</div>
+      <div class="filter-pills" id="type-filters">
+        <button class="filter-pill active" data-filter="all" data-group="type">All</button>
+        {% for wtype in work_types %}
+          {% if wtype and wtype != "" %}
+          <button class="filter-pill" data-filter="{{ wtype }}" data-group="type">
+            {{ wtype | replace: "-", " " | capitalize }}
+          </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-section__label">Count</div>
+      <p class="project-count"><span id="visible-count">{{ category_projects | size }}</span> / {{ category_projects | size }}</p>
+    </div>
+  </aside>
+
+  <!-- Projects list -->
+  <div class="projects-list" id="projects-list">
+    {% for project in category_projects %}
+    <article class="project-card{% if project.compact %} project-card--compact{% elsif project.thumbnail == nil or project.thumbnail == "" %} project-card--no-image{% endif %}"
+             data-subcat="{{ project.subcategory }}"
+             data-type="{{ project.type }}"
+             data-tags="{{ project.tags | join: ',' }}">
+
+      {% unless project.compact %}
+      <div class="project-card__image">
+        {% if project.thumbnail %}
+        <a href="{{ project.url }}">
+          <img src="{{ project.thumbnail }}" alt="{{ project.title }}" class="project-thumbnail" loading="lazy">
+        </a>
+        {% else %}
+        <a href="{{ project.url }}" class="project-thumbnail-placeholder project-thumbnail-placeholder--{{ project.category }}">
+          <span>{{ project.subcategory | upcase | truncate: 4, "" }}</span>
+        </a>
+        {% endif %}
+      </div>
+      {% endunless %}
+
+      <div class="project-card__content">
+        <div class="project-card__header">
+          <a href="{{ project.url }}" class="project-card__title">{{ project.title }}</a>
+          {% if project.featured %}<span class="badge-new">NEW</span>{% endif %}
+        </div>
+
+        {% if project.description %}
+        <p class="project-card__subtitle">{{ project.description }}</p>
+        {% endif %}
+
+        {% unless project.compact %}
+        {% if project.content and project.content != "" %}
+        <p class="project-card__body">{{ project.content | strip_html | strip_newlines | truncate: 220 }}</p>
+        {% endif %}
+        {% endunless %}
+
+        <div class="project-card__footer">
+          {% if project.tags %}
+          <div class="project-card__tags">
+            {% for tag in project.tags %}
+            <span class="project-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if project.link %}
+          <a href="{{ project.link }}" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
+          {% else %}
+          <a href="{{ project.url }}" class="btn-action">READ →</a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="project-card__meta">
+        <span class="project-card__date">{{ project.date | date: "%Y" }}</span>
+        {% if project.end_date %}<span class="project-card__date">–{{ project.end_date | date: "%Y" }}</span>{% endif %}
+        <span class="project-card__subcat">{{ project.subcategory | replace: "-", " " }}</span>
+        <span class="project-card__type">{{ project.type | replace: "-", " " }}</span>
+      </div>
+    </article>
+    {% endfor %}
+
+    {% if category_projects.size == 0 %}
+    <div class="projects-empty">No projects yet.</div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+(function() {
+  var cards = Array.from(document.querySelectorAll('.project-card'));
+  var countEl = document.getElementById('visible-count');
+
+  var activeSubcat = 'all';
+  var activeType = 'all';
+
+  function updateCount() {
+    var visible = cards.filter(function(c) { return c.style.display !== 'none'; }).length;
+    if (countEl) countEl.textContent = visible;
+  }
+
+  function applyFilters() {
+    cards.forEach(function(card) {
+      var matchSubcat = activeSubcat === 'all' || card.dataset.subcat === activeSubcat;
+      var matchType = activeType === 'all' || card.dataset.type === activeType;
+      card.style.display = (matchSubcat && matchType) ? '' : 'none';
+    });
+    updateCount();
+  }
+
+  document.querySelectorAll('[data-group="subcat"]').forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      document.querySelectorAll('[data-group="subcat"]').forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      activeSubcat = pill.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll('[data-group="type"]').forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      document.querySelectorAll('[data-group="type"]').forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      activeType = pill.dataset.filter;
+      applyFilters();
+    });
+  });
+})();
+</script>

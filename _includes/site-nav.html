@@ -1,0 +1,8 @@
+<nav class="site-nav">
+  <a href="/" class="site-nav__title">Pathum Egodawatta</a>
+  <ul class="site-nav__links">
+    <li><a href="/designer" {% if page.category_slug == 'designer' %}class="active"{% endif %}>Designer</a></li>
+    <li><a href="/thinker" {% if page.category_slug == 'thinker' %}class="active"{% endif %}>Thinker</a></li>
+    <li><a href="/catalyst" {% if page.category_slug == 'catalyst' %}class="active"{% endif %}>Catalyst</a></li>
+  </ul>
+</nav>

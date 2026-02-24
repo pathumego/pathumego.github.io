@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  {% include header.html %}
-  <body>
-    <div class="container">
-      {% include header.html %}
-
-      <main>
-        {{ content }}
-      </main>
-
-      {% include footer.html %}
-    </div>
-
-
-    {% if jekyll.environment == 'production' and site.google_analytics %}
-      {% include google-analytics.html %}
-    {% endif %}
-  </body>
+<html lang="en" {% if page.dark_theme %}data-theme="dark"{% endif %}>
+{% include header.html %}
+<body class="{% if page.dark_theme %}dark-page{% endif %} {{ page.body_class }}">
+  {% include site-nav.html %}
+  <main class="site-main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+</body>
 </html>

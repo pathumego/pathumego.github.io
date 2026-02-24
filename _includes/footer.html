@@ -1,29 +1,10 @@
-<footer class="footer">
-  <div class="footer-column">
-    <p>
-        
-        <nav>
-          <br> <a href="https://www.instagram.com/pathumego" class="current">instagram</a>
-          <br> <a href="mailto:pathum@mooniak.com" class="current">email</a>
-        </nav>
-        
-            </main>
-        
-            <p>        &copy;&nbsp;
-              2014—2025 Pathum Egodawatta  
-    
-  </div>
-  {% if site.data.social %}
-    <div class="footer-column">
-      <ul class="social-icons">
-        {% for social in site.data.social %}
-          <li class="social-icon-item">
-            <a class="social-icon" href="{{ social.url }}" target="_blank">
-              <i class="{{ social.icon | default: 'fas fa-link' }}" title="{{ social.title }}"></i>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__links">
+      <a href="https://www.instagram.com/pathumego" target="_blank" rel="noopener">instagram</a>
+      <a href="mailto:pathum@mooniak.com">email</a>
+      <a href="https://mooniak.com" target="_blank" rel="noopener">mooniak</a>
     </div>
-  {% endif %}
+    <p class="site-footer__copy">&copy; 2014–2025 Pathum Egodawatta</p>
+  </div>
 </footer>

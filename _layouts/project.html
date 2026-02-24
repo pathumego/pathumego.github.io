@@ -1,0 +1,104 @@
+---
+layout: default
+dark_theme: true
+---
+
+<div class="project-detail">
+  <a href="/{{ page.category }}" class="project-detail__back">← Back to {{ page.category | capitalize }}</a>
+
+  <header class="project-detail__header">
+    <div class="project-detail__category-tag">
+      <a href="/{{ page.category }}">{{ page.category | capitalize }}</a>
+      {% if page.subcategory %}
+      <span class="separator">·</span>
+      <span>{{ page.subcategory | replace: "-", " " | capitalize }}</span>
+      {% endif %}
+    </div>
+
+    <h1 class="project-detail__title">{{ page.title }}</h1>
+
+    {% if page.description %}
+    <p class="project-detail__lead">{{ page.description }}</p>
+    {% endif %}
+
+    <div class="project-detail__meta">
+      <div class="meta-item">
+        <span class="meta-label">Year</span>
+        <span class="meta-value">
+          {{ page.date | date: "%Y" }}{% if page.end_date %} – {{ page.end_date | date: "%Y" }}{% endif %}
+        </span>
+      </div>
+      {% if page.type %}
+      <div class="meta-item">
+        <span class="meta-label">Context</span>
+        <span class="meta-value">{{ page.type | replace: "-", " " | capitalize }}</span>
+      </div>
+      {% endif %}
+      {% if page.client %}
+      <div class="meta-item">
+        <span class="meta-label">Client</span>
+        <span class="meta-value">{{ page.client }}</span>
+      </div>
+      {% endif %}
+      {% if page.collaborators %}
+      <div class="meta-item">
+        <span class="meta-label">With</span>
+        <span class="meta-value">{{ page.collaborators }}</span>
+      </div>
+      {% endif %}
+      {% if page.status %}
+      <div class="meta-item">
+        <span class="meta-label">Status</span>
+        <span class="meta-value">{{ page.status | capitalize }}</span>
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.thumbnail %}
+  <div class="project-detail__hero">
+    <img src="{{ page.thumbnail }}" alt="{{ page.title }}">
+  </div>
+  {% endif %}
+
+  <div class="project-detail__body">
+    {{ content }}
+  </div>
+
+  {% if page.images and page.images.size > 0 %}
+  <div class="project-detail__gallery">
+    <h2 class="gallery-heading">Images</h2>
+    <div class="gallery-grid">
+      {% for img in page.images %}
+      <div class="gallery-item">
+        <img src="{{ img.src | default: img }}" alt="{{ img.caption | default: page.title }}" loading="lazy">
+        {% if img.caption %}
+        <p class="gallery-caption">{{ img.caption }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if page.tags and page.tags.size > 0 %}
+  <div class="project-detail__tags">
+    <span class="tags-label">Tags:</span>
+    {% for tag in page.tags %}
+    <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.link %}
+  <div class="project-detail__cta">
+    <a href="{{ page.link }}" target="_blank" rel="noopener" class="btn-cta">
+      View Project ↗
+    </a>
+  </div>
+  {% endif %}
+
+  <div class="project-detail__nav">
+    <a href="/{{ page.category }}" class="project-detail__back">← All {{ page.category | capitalize }} work</a>
+  </div>
+</div>

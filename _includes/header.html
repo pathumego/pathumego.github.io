@@ -1,39 +1,40 @@
-<!doctype html>
-<html lang="en-GB">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>pathum egodawatta</title>
-    <meta name="description" content="pathum egodawatta" />
-    <!-- Minified version -->
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <link rel="stylesheet" href="./assets/fonts/Maname.css ">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="icon" href="/assets/images/favicon.png" />
-    <link rel="apple-touch-icon" href="/assets/images/favicon.png">
-    <link rel="stylesheet" href="https://dlzxjqdbhxhslzirdniv.supabase.co/functions/v1/serve-client-css?font_id=dab219ce-69a6-43ac-9833-362c54310128&client_id=f1de3fb3-9cb7-418c-9470-00ebb2269656">
-    <!-- Facebook integration -->
-    <meta property="og:title" content="pathum egodawatta" />
-    <meta property="og:image" content="https://" />
-    <meta property="og:url" content="https://" />
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="mooniak" />
-    <meta property="og:description" content="pathum egodawatta." />
+  <title>{% if page.title %}{{ page.title }} — {% endif %}Pathum Egodawatta</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 
-    <!-- Twitter integration -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="pathum egodawatta" />
-    <meta name="twitter:image" content="https://" />
-    <meta name="twitter:url" content="https://pathumego.com" />
-    <meta name="twitter:description" content="pathum egodawatta." />
+  <link rel="icon" href="/assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-    <link rel="canonical" href="https://pathumego.com">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://pathumego.com/sitemap.xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,700;1,300;1,500&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- Custom font service (Yakkala DEV) -->
+  <link rel="stylesheet" href="https://dlzxjqdbhxhslzirdniv.supabase.co/functions/v1/serve-client-css?font_id=dab219ce-69a6-43ac-9833-362c54310128&client_id=f1de3fb3-9cb7-418c-9470-00ebb2269656">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,700;1,300;1,500&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} — {% endif %}Pathum Egodawatta" />
+  <meta property="og:url" content="https://pathumego.com{{ page.url }}" />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pathum Egodawatta" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  {% if page.thumbnail %}<meta property="og:image" content="https://pathumego.com{{ page.thumbnail }}" />{% endif %}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} — {% endif %}Pathum Egodawatta" />
+  <meta name="twitter:url" content="https://pathumego.com{{ page.url }}" />
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+  {% if page.thumbnail %}<meta name="twitter:image" content="https://pathumego.com{{ page.thumbnail }}" />{% endif %}
+
+  <link rel="canonical" href="https://pathumego.com{{ page.url }}">
+  {% feed_meta %}
 </head>
