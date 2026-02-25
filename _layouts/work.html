@@ -3,26 +3,35 @@ layout: default
 dark_theme: true
 ---
 
-{% assign category_projects = site.projects | where: "category", page.category_slug | sort: "date" | reverse %}
-{% assign subcategories = category_projects | map: "subcategory" | uniq | sort %}
-{% assign work_types = category_projects | map: "type" | uniq | sort %}
+{% assign all_projects = site.projects | sort: "date" | reverse %}
+{% assign subcategories = all_projects | map: "subcategory" | uniq | sort %}
+{% assign work_types = all_projects | map: "type" | uniq | sort %}
 
 <div class="category-page">
 
   <!-- Top header + filter bar -->
   <div class="category-header">
     <div class="category-header__top">
-      <h1 class="category-header__title">{{ page.title }}</h1>
-      {% if page.category_intro %}
-      <p class="category-header__intro">{{ page.category_intro }}</p>
-      {% endif %}
+      <h1 class="category-header__title">{{ page.title | default: "Work" }}</h1>
     </div>
 
     <div class="category-filters">
+
+      <!-- Category filter row -->
+      <div class="filter-row">
+        <span class="filter-row__label">Category</span>
+        <div class="filter-pills">
+          <button class="filter-pill active" data-filter="all" data-group="category">All</button>
+          <button class="filter-pill" data-filter="designer" data-group="category">Designer</button>
+          <button class="filter-pill" data-filter="thinker" data-group="category">Thinker</button>
+          <button class="filter-pill" data-filter="catalyst" data-group="category">Catalyst</button>
+        </div>
+      </div>
+
       <!-- Subcategory filter row -->
       <div class="filter-row">
         <span class="filter-row__label">Type</span>
-        <div class="filter-pills" id="subcat-filters">
+        <div class="filter-pills">
           <button class="filter-pill active" data-filter="all" data-group="subcat">All</button>
           {% for subcat in subcategories %}
             {% if subcat and subcat != "" %}
@@ -34,10 +43,10 @@ dark_theme: true
         </div>
       </div>
 
-      <!-- Type filter row -->
+      <!-- Work type filter row -->
       <div class="filter-row">
         <span class="filter-row__label">Context</span>
-        <div class="filter-pills" id="type-filters">
+        <div class="filter-pills">
           <button class="filter-pill active" data-filter="all" data-group="type">All</button>
           {% for wtype in work_types %}
             {% if wtype and wtype != "" %}
@@ -47,15 +56,17 @@ dark_theme: true
             {% endif %}
           {% endfor %}
         </div>
-        <span class="project-count"><span id="visible-count">{{ category_projects | size }}</span> projects</span>
+        <span class="project-count"><span id="visible-count">{{ all_projects | size }}</span> projects</span>
       </div>
+
     </div>
   </div>
 
   <!-- Projects list -->
   <div class="projects-list" id="projects-list">
-    {% for project in category_projects %}
+    {% for project in all_projects %}
     <article class="project-card{% if project.compact %} project-card--compact{% elsif project.thumbnail == nil or project.thumbnail == "" %} project-card--no-image{% endif %}"
+             data-category="{{ project.category }}"
              data-subcat="{{ project.subcategory }}"
              data-type="{{ project.type }}"
              data-tags="{{ project.tags | join: ',' }}">
@@ -109,16 +120,13 @@ dark_theme: true
 
       <div class="project-card__meta">
         <span class="project-card__date">{{ project.date | date: "%Y" }}{% if project.end_date %} –{{ project.end_date | date: "%Y" }}{% endif %}</span>
-        <span class="project-card__subcat">{{ project.subcategory | replace: "-", " " }}</span>
-        <span class="project-card__type">{{ project.type | replace: "-", " " }}</span>
+        <span class="project-card__subcat">{{ project.category }}</span>
+        <span class="project-card__type">{{ project.subcategory | replace: "-", " " }}</span>
       </div>
     </article>
     {% endfor %}
-
-    {% if category_projects.size == 0 %}
-    <div class="projects-empty">No projects yet.</div>
-    {% endif %}
   </div>
+
 </div>
 
 <script>
@@ -126,8 +134,9 @@ dark_theme: true
   var cards = Array.from(document.querySelectorAll('.project-card'));
   var countEl = document.getElementById('visible-count');
 
-  var activeSubcat = 'all';
-  var activeType = 'all';
+  var activeCategory = 'all';
+  var activeSubcat   = 'all';
+  var activeType     = 'all';
 
   function updateCount() {
     var visible = cards.filter(function(c) { return c.style.display !== 'none'; }).length;
@@ -136,29 +145,27 @@ dark_theme: true
 
   function applyFilters() {
     cards.forEach(function(card) {
-      var matchSubcat = activeSubcat === 'all' || card.dataset.subcat === activeSubcat;
-      var matchType = activeType === 'all' || card.dataset.type === activeType;
-      card.style.display = (matchSubcat && matchType) ? '' : 'none';
+      var ok = (activeCategory === 'all' || card.dataset.category === activeCategory)
+            && (activeSubcat   === 'all' || card.dataset.subcat    === activeSubcat)
+            && (activeType     === 'all' || card.dataset.type      === activeType);
+      card.style.display = ok ? '' : 'none';
     });
     updateCount();
   }
 
-  document.querySelectorAll('[data-group="subcat"]').forEach(function(pill) {
-    pill.addEventListener('click', function() {
-      document.querySelectorAll('[data-group="subcat"]').forEach(function(p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      activeSubcat = pill.dataset.filter;
-      applyFilters();
+  function bindGroup(group, setter) {
+    document.querySelectorAll('[data-group="' + group + '"]').forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        document.querySelectorAll('[data-group="' + group + '"]').forEach(function(p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+        setter(pill.dataset.filter);
+        applyFilters();
+      });
     });
-  });
+  }
 
-  document.querySelectorAll('[data-group="type"]').forEach(function(pill) {
-    pill.addEventListener('click', function() {
-      document.querySelectorAll('[data-group="type"]').forEach(function(p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      activeType = pill.dataset.filter;
-      applyFilters();
-    });
-  });
+  bindGroup('category', function(v) { activeCategory = v; });
+  bindGroup('subcat',   function(v) { activeSubcat   = v; });
+  bindGroup('type',     function(v) { activeType     = v; });
 })();
 </script>
