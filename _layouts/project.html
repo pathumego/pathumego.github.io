@@ -1,14 +1,13 @@
 ---
 layout: default
-dark_theme: true
 ---
 
 <div class="project-detail">
-  <a href="/{{ page.category }}" class="project-detail__back">← Back to {{ page.category | capitalize }}</a>
+  <a href="/work" class="project-detail__back">← Back to Work</a>
 
   <header class="project-detail__header">
     <div class="project-detail__category-tag">
-      <a href="/{{ page.category }}">{{ page.category | capitalize }}</a>
+      <a href="/work">Work</a>
       {% if page.subcategory %}
       <span class="separator">·</span>
       <span>{{ page.subcategory | replace: "-", " " | capitalize }}</span>
@@ -24,9 +23,7 @@ dark_theme: true
     <div class="project-detail__meta">
       <div class="meta-item">
         <span class="meta-label">Year</span>
-        <span class="meta-value">
-          {{ page.date | date: "%Y" }}{% if page.end_date %} – {{ page.end_date | date: "%Y" }}{% endif %}
-        </span>
+        <span class="meta-value">{{ page.date | date: "%Y" }}{% if page.end_date %}–{{ page.end_date | date: "%Y" }}{% endif %}</span>
       </div>
       {% if page.type %}
       <div class="meta-item">
@@ -67,14 +64,12 @@ dark_theme: true
 
   {% if page.images and page.images.size > 0 %}
   <div class="project-detail__gallery">
-    <h2 class="gallery-heading">Images</h2>
+    <p class="gallery-heading">Images</p>
     <div class="gallery-grid">
       {% for img in page.images %}
       <div class="gallery-item">
         <img src="{{ img.src | default: img }}" alt="{{ img.caption | default: page.title }}" loading="lazy">
-        {% if img.caption %}
-        <p class="gallery-caption">{{ img.caption }}</p>
-        {% endif %}
+        {% if img.caption %}<p class="gallery-caption">{{ img.caption }}</p>{% endif %}
       </div>
       {% endfor %}
     </div>
@@ -84,21 +79,17 @@ dark_theme: true
   {% if page.tags and page.tags.size > 0 %}
   <div class="project-detail__tags">
     <span class="tags-label">Tags:</span>
-    {% for tag in page.tags %}
-    <span class="tag">{{ tag }}</span>
-    {% endfor %}
+    {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
   </div>
   {% endif %}
 
   {% if page.link %}
   <div class="project-detail__cta">
-    <a href="{{ page.link }}" target="_blank" rel="noopener" class="btn-cta">
-      View Project ↗
-    </a>
+    <a href="{{ page.link }}" target="_blank" rel="noopener" class="btn-cta">View Project ↗</a>
   </div>
   {% endif %}
 
   <div class="project-detail__nav">
-    <a href="/{{ page.category }}" class="project-detail__back">← All {{ page.category | capitalize }} work</a>
+    <a href="/work" class="project-detail__back">← All work</a>
   </div>
 </div>

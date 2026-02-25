@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Work — Pathum Egodawatta</title>
+  <title>All projects and work — Pathum Egodawatta</title>
   <meta name="description" content="Interdisciplinary designer, thinker, and catalyst working at the intersections of type, text, design, code, and culture." />
 
   <link rel="icon" href="/assets/images/favicon.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
 
   <!-- Custom font service (Yakkala DEV) -->
@@ -23,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,700;1,300;1,500&display=swap" rel="stylesheet">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Work — Pathum Egodawatta" />
+  <meta property="og:title" content="All projects and work — Pathum Egodawatta" />
   <meta property="og:url" content="https://pathumego.com/work/" />
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Pathum Egodawatta" />
@@ -32,7 +31,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Work — Pathum Egodawatta" />
+  <meta name="twitter:title" content="All projects and work — Pathum Egodawatta" />
   <meta name="twitter:url" content="https://pathumego.com/work/" />
   <meta name="twitter:description" content="Interdisciplinary designer, thinker, and catalyst working at the intersections of type, text, design, code, and culture." />
   
@@ -41,14 +40,18 @@
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Pathum Egodawatta" />
 </head>
 
-<body class="dark-page ">
+<body>
+  
   <nav class="site-nav">
-  <a href="/" class="site-nav__title">Pathum Egodawatta</a>
-  <ul class="site-nav__links">
-    <li><a href="/work" class="active">Work</a></li>
-  </ul>
+  <div class="site-nav__inner">
+    <a href="/" class="site-nav__title">Pathum Egodawatta</a>
+    <ul class="site-nav__links">
+      <li><a href="/work" class="active">Work</a></li>
+    </ul>
+  </div>
 </nav>
 
+  
   <main class="site-main">
     
 
@@ -56,1955 +59,670 @@
 
 <div class="category-page">
 
-  <!-- Top header + filter bar -->
   <div class="category-header">
-    <div class="category-header__top">
-      <h1 class="category-header__title">Work</h1>
-    </div>
+    <div class="category-header__inner">
+      <h1 class="category-header__title">All projects and work</h1>
+      <div class="category-filters">
 
-    <div class="category-filters">
-
-      <!-- Category filter row -->
-      <div class="filter-row">
-        <span class="filter-row__label">Category</span>
-        <div class="filter-pills">
-          <button class="filter-pill active" data-filter="all" data-group="category">All</button>
-          <button class="filter-pill" data-filter="designer" data-group="category">Designer</button>
-          <button class="filter-pill" data-filter="thinker" data-group="category">Thinker</button>
-          <button class="filter-pill" data-filter="catalyst" data-group="category">Catalyst</button>
+        <div class="filter-row">
+          <span class="filter-row__label">Category</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all"      data-group="category">All</button>
+            <button class="filter-pill"        data-filter="designer" data-group="category">Designer</button>
+            <button class="filter-pill"        data-filter="thinker"  data-group="category">Thinker</button>
+            <button class="filter-pill"        data-filter="catalyst" data-group="category">Catalyst</button>
+          </div>
         </div>
-      </div>
 
-      <!-- Subcategory filter row -->
-      <div class="filter-row">
-        <span class="filter-row__label">Type</span>
-        <div class="filter-pills">
-          <button class="filter-pill active" data-filter="all" data-group="subcat">All</button>
-          
+        <div class="filter-row">
+          <span class="filter-row__label">Type</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all" data-group="subcat">All</button>
             
-            <button class="filter-pill" data-filter="article" data-group="subcat">
-              Article
-            </button>
+            <button class="filter-pill" data-filter="article" data-group="subcat">Article</button>
             
-          
+            <button class="filter-pill" data-filter="community" data-group="subcat">Community</button>
             
-            <button class="filter-pill" data-filter="community" data-group="subcat">
-              Community
-            </button>
+            <button class="filter-pill" data-filter="conference" data-group="subcat">Conference</button>
             
-          
+            <button class="filter-pill" data-filter="curation" data-group="subcat">Curation</button>
             
-            <button class="filter-pill" data-filter="conference" data-group="subcat">
-              Conference
-            </button>
+            <button class="filter-pill" data-filter="education" data-group="subcat">Education</button>
             
-          
+            <button class="filter-pill" data-filter="font-engineering" data-group="subcat">Font engineering</button>
             
-            <button class="filter-pill" data-filter="curation" data-group="subcat">
-              Curation
-            </button>
+            <button class="filter-pill" data-filter="heritage" data-group="subcat">Heritage</button>
             
-          
+            <button class="filter-pill" data-filter="research" data-group="subcat">Research</button>
             
-            <button class="filter-pill" data-filter="education" data-group="subcat">
-              Education
-            </button>
+            <button class="filter-pill" data-filter="talk" data-group="subcat">Talk</button>
             
-          
+            <button class="filter-pill" data-filter="typeface-design" data-group="subcat">Typeface design</button>
             
-            <button class="filter-pill" data-filter="font-engineering" data-group="subcat">
-              Font engineering
-            </button>
+            <button class="filter-pill" data-filter="workshop" data-group="subcat">Workshop</button>
             
-          
-            
-            <button class="filter-pill" data-filter="heritage" data-group="subcat">
-              Heritage
-            </button>
-            
-          
-            
-            <button class="filter-pill" data-filter="research" data-group="subcat">
-              Research
-            </button>
-            
-          
-            
-            <button class="filter-pill" data-filter="talk" data-group="subcat">
-              Talk
-            </button>
-            
-          
-            
-            <button class="filter-pill" data-filter="typeface-design" data-group="subcat">
-              Typeface design
-            </button>
-            
-          
-            
-            <button class="filter-pill" data-filter="workshop" data-group="subcat">
-              Workshop
-            </button>
-            
-          
+          </div>
         </div>
-      </div>
 
-      <!-- Work type filter row -->
-      <div class="filter-row">
-        <span class="filter-row__label">Context</span>
-        <div class="filter-pills">
-          <button class="filter-pill active" data-filter="all" data-group="type">All</button>
-          
+        <div class="filter-row">
+          <span class="filter-row__label">Context</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all" data-group="type">All</button>
             
-            <button class="filter-pill" data-filter="academic" data-group="type">
-              Academic
-            </button>
+            <button class="filter-pill" data-filter="academic" data-group="type">Academic</button>
             
-          
+            <button class="filter-pill" data-filter="client-work" data-group="type">Client work</button>
             
-            <button class="filter-pill" data-filter="client-work" data-group="type">
-              Client work
-            </button>
+            <button class="filter-pill" data-filter="community" data-group="type">Community</button>
             
-          
+            <button class="filter-pill" data-filter="open-source" data-group="type">Open source</button>
             
-            <button class="filter-pill" data-filter="community" data-group="type">
-              Community
-            </button>
+            <button class="filter-pill" data-filter="personal" data-group="type">Personal</button>
             
-          
-            
-            <button class="filter-pill" data-filter="open-source" data-group="type">
-              Open source
-            </button>
-            
-          
-            
-            <button class="filter-pill" data-filter="personal" data-group="type">
-              Personal
-            </button>
-            
-          
+          </div>
+          <span class="project-count"><span id="visible-count">28</span> projects</span>
         </div>
-        <span class="project-count"><span id="visible-count">28</span> projects</span>
-      </div>
 
+      </div>
     </div>
   </div>
 
-  <!-- Projects list -->
-  <div class="projects-list" id="projects-list">
-    
-    <article class="project-card project-card--no-image"
-             data-category="thinker"
-             data-subcat="talk"
-             data-type="personal"
-             data-tags="talk,fonts,industry,sri-lanka,design-festival,economics,sustainability">
-
+  <div class="projects-list-wrap">
+    <div class="projects-grid" id="projects-list">
       
-      <div class="project-card__image">
-        
-        <a href="/projects/fonts-bankrupt-country/" class="project-thumbnail-placeholder project-thumbnail-placeholder--thinker">
-          <span>TALK</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/fonts-bankrupt-country/" class="project-card__title">How to Build a Fonts Industry in a Bankrupt Country?</a>
-          
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="talk"
+        data-type="personal">
+        <div class="grid-card__thumb">
+          <a href="/projects/fonts-bankrupt-country/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">TALK</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Talk at Sri Lanka Design Festival on building a sustainable fonts industry in Sri Lanka.</p>
-        
-
-        
-        
-        <p class="project-card__body">A talk delivered at the Sri Lanka Design Festival examining the possibility — and the challenges — of building a viable font industry in Sri Lanka in the context of the country’s economic crisis.ContextSri Lanka enter...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">talk</span>
-            
-            <span class="project-tag">fonts</span>
-            
-            <span class="project-tag">industry</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">design-festival</span>
-            
-            <span class="project-tag">economics</span>
-            
-            <span class="project-tag">sustainability</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/fonts-bankrupt-country/" class="grid-card__title">How to Build a Fonts Industry in a Bankrupt Country?</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2023</span>
           </div>
-          
-
-          
-          <a href="/projects/fonts-bankrupt-country/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2023</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">talk</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="catalyst"
-             data-subcat="curation"
-             data-type="community"
-             data-tags="museum,curation,heritage,sinhala,sri-lanka,typography,literature,language,colombo">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/wa-silva-museum/" class="project-thumbnail-placeholder project-thumbnail-placeholder--catalyst">
-          <span>CURA</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/wa-silva-museum/" class="project-card__title">W A Silva Museum for Language, Literature and Typography</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="curation"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/wa-silva-museum/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">CURA</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Chief Curator of the W A Silva Museum — preserving Sri Lanka's language and typographic heritage.</p>
-        
-
-        
-        
-        <p class="project-card__body">The W A Silva Museum for Language, Literature and Typography is located in Colombo 6, Sri Lanka. Named after W A Silva, a pioneering Sinhala novelist and publisher, the museum preserves and makes accessible Sri Lanka’...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">museum</span>
-            
-            <span class="project-tag">curation</span>
-            
-            <span class="project-tag">heritage</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">literature</span>
-            
-            <span class="project-tag">language</span>
-            
-            <span class="project-tag">colombo</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/wa-silva-museum/" class="grid-card__title">W A Silva Museum for Language, Literature and Typography</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2020–2099</span>
           </div>
-          
-
-          
-          <a href="/projects/wa-silva-museum/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2020 –2099</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">curation</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--compact"
-             data-category="catalyst"
-             data-subcat="curation"
-             data-type="community"
-             data-tags="institute,typography,sri-lanka,education,heritage,management">
-
+      </article>
       
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/institute-of-typography/" class="project-card__title">Institute of Typography — Sri Lanka</a>
-          
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="curation"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/institute-of-typography/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">CURA</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Director of the Institute of Typography — Sri Lanka, overseeing the W A Silva Museum.</p>
-        
-
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">institute</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">education</span>
-            
-            <span class="project-tag">heritage</span>
-            
-            <span class="project-tag">management</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/institute-of-typography/" class="grid-card__title">Institute of Typography — Sri Lanka</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2020–2099</span>
           </div>
-          
-
-          
-          <a href="/projects/institute-of-typography/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2020 –2099</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">curation</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="catalyst"
-             data-subcat="heritage"
-             data-type="open-source"
-             data-tags="typeface-design,heritage,dutch,ceylon,revival,open-source,sinhala,tamil,printing-history">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/galle-font-project/" class="project-thumbnail-placeholder project-thumbnail-placeholder--catalyst">
-          <span>HERI</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/galle-font-project/" class="project-card__title">Galle Font Project</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="heritage"
+        data-type="open-source">
+        <div class="grid-card__thumb">
+          <a href="/projects/galle-font-project/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">HERI</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Digital revival of Sinhala letterforms from the 18th-century Dutch Press in Ceylon.</p>
-        
-
-        
-        
-        <p class="project-card__body">The Galle Font Project aims to develop a digital typeface based on the original letterforms designed by Gabriel Schade and his successors at the type foundry of the Dutch Press in Ceylon.Historical SourceGabriel Schad...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">typeface-design</span>
-            
-            <span class="project-tag">heritage</span>
-            
-            <span class="project-tag">dutch</span>
-            
-            <span class="project-tag">ceylon</span>
-            
-            <span class="project-tag">revival</span>
-            
-            <span class="project-tag">open-source</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">tamil</span>
-            
-            <span class="project-tag">printing-history</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/galle-font-project/" class="grid-card__title">Galle Font Project</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2020</span>
           </div>
-          
-
-          
-          <a href="/projects/galle-font-project/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2020</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">heritage</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--compact"
-             data-category="catalyst"
-             data-subcat="workshop"
-             data-type="community"
-             data-tags="workshop,typeface-design,singapore,crafting-type,teaching,hands-on">
-
+      </article>
       
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/crafting-type-singapore/" class="project-card__title">Crafting Type Singapore 2020</a>
-          
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="workshop"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/crafting-type-singapore/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">WORK</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Workshop on type design in Singapore as part of the Crafting Type workshop series.</p>
-        
-
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">workshop</span>
-            
-            <span class="project-tag">typeface-design</span>
-            
-            <span class="project-tag">singapore</span>
-            
-            <span class="project-tag">crafting-type</span>
-            
-            <span class="project-tag">teaching</span>
-            
-            <span class="project-tag">hands-on</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/crafting-type-singapore/" class="grid-card__title">Crafting Type Singapore 2020</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2020</span>
           </div>
-          
-
-          
-          <a href="/projects/crafting-type-singapore/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2020</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">workshop</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="catalyst"
-             data-subcat="conference"
-             data-type="community"
-             data-tags="atypi,conference,typography,education,university,teaching,colombo,south-asia">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/atypi-working-seminars/" class="project-thumbnail-placeholder project-thumbnail-placeholder--catalyst">
-          <span>CONF</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/atypi-working-seminars/" class="project-card__title">ATypI Working Seminars Colombo 2019</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="conference"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/atypi-working-seminars/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">CONF</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">ATypI's first Working Seminar in 27 years — hosted in Colombo with a focus on teaching typography.</p>
-        
-
-        
-        
-        <p class="project-card__body">In partnership with FARU (Faculty of Architecture Research Unit), University of Moratuwa Sri Lanka, and the Akuru Collective, ATypI (Association Typographique Internationale) held their Working Seminars in Colombo on ...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">atypi</span>
-            
-            <span class="project-tag">conference</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">education</span>
-            
-            <span class="project-tag">university</span>
-            
-            <span class="project-tag">teaching</span>
-            
-            <span class="project-tag">colombo</span>
-            
-            <span class="project-tag">south-asia</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/atypi-working-seminars/" class="grid-card__title">ATypI Working Seminars Colombo 2019</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2019–2019</span>
           </div>
-          
-
-          
-          <a href="https://workingseminars.atypi.org/working-seminar-colombo/" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2019 –2019</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">conference</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--compact"
-             data-category="catalyst"
-             data-subcat="workshop"
-             data-type="community"
-             data-tags="workshop,childrens-books,typography,sinhala,ibby,book-design,education">
-
+      </article>
       
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/typography-childrens-literature/" class="project-card__title">Typography for Children's Literature Workshop</a>
-          
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="workshop"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/typography-childrens-literature/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">WORK</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Workshop on typography for Sinhala children's book design, organised by IBBY Sri Lanka.</p>
-        
-
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">workshop</span>
-            
-            <span class="project-tag">childrens-books</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">ibby</span>
-            
-            <span class="project-tag">book-design</span>
-            
-            <span class="project-tag">education</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/typography-childrens-literature/" class="grid-card__title">Typography for Children's Literature Workshop</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2019</span>
           </div>
-          
-
-          
-          <a href="/projects/typography-childrens-literature/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2019</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">workshop</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="thinker"
-             data-subcat="talk"
-             data-type="personal"
-             data-tags="talk,south-asia,typography,colonialism,design-history,decolonisation">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/south-asian-typography-talk/" class="project-thumbnail-placeholder project-thumbnail-placeholder--thinker">
-          <span>TALK</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/south-asian-typography-talk/" class="project-card__title">South Asian Typography and Understanding Design Colonization</a>
-          
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="talk"
+        data-type="personal">
+        <div class="grid-card__thumb">
+          <a href="/projects/south-asian-typography-talk/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">TALK</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">A talk examining how colonial typographic conventions persist in South Asian design practice.</p>
-        
-
-        
-        
-        <p class="project-card__body">A talk exploring how the colonial history of printing in South Asia left deep typographic and design conventions that persist in contemporary practice — and what it might mean to begin decolonising design education an...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">talk</span>
-            
-            <span class="project-tag">south-asia</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">colonialism</span>
-            
-            <span class="project-tag">design-history</span>
-            
-            <span class="project-tag">decolonisation</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/south-asian-typography-talk/" class="grid-card__title">South Asian Typography and Understanding Design Colonization</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2019</span>
           </div>
-          
-
-          
-          <a href="/projects/south-asian-typography-talk/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2019</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">talk</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="catalyst"
-             data-subcat="heritage"
-             data-type="community"
-             data-tags="heritage,netherlands,dutch,ceylon,sri-lanka,typography,history,printing,bilateral">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/dutch-ceylon-heritage/" class="project-thumbnail-placeholder project-thumbnail-placeholder--catalyst">
-          <span>HERI</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/dutch-ceylon-heritage/" class="project-card__title">Dutch–Ceylon Typographic Heritage Project</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="heritage"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/dutch-ceylon-heritage/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">HERI</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Knowledge exchange exploring shared typographic heritage between Sri Lanka and the Netherlands.</p>
-        
-
-        
-        
-        <p class="project-card__body">A series of knowledge generation and exchange projects aimed at exploring the shared cultural heritage between Sri Lanka and the Netherlands in the areas of typography, printing, graphic design, and type design.Histor...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">heritage</span>
-            
-            <span class="project-tag">netherlands</span>
-            
-            <span class="project-tag">dutch</span>
-            
-            <span class="project-tag">ceylon</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">history</span>
-            
-            <span class="project-tag">printing</span>
-            
-            <span class="project-tag">bilateral</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/dutch-ceylon-heritage/" class="grid-card__title">Dutch–Ceylon Typographic Heritage Project</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2019</span>
           </div>
-          
-
-          
-          <a href="/projects/dutch-ceylon-heritage/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2019</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">heritage</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="catalyst"
-             data-subcat="education"
-             data-type="community"
-             data-tags="education,teaching,typography,design-educators,university,workshop,pedagogy">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/design-educators-forum/" class="project-thumbnail-placeholder project-thumbnail-placeholder--catalyst">
-          <span>EDUC</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/design-educators-forum/" class="project-card__title">Typography Educators Forum</a>
-          
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="education"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/design-educators-forum/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">EDUC</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Forum for design educators to develop and share techniques for teaching typography.</p>
-        
-
-        
-        
-        <p class="project-card__body">The Typography Educators Forum was organised to facilitate and inspire the development of techniques and exercises for teaching typography and typographic subjects within undergraduate design programmes.AimThe forum w...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">education</span>
-            
-            <span class="project-tag">teaching</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">design-educators</span>
-            
-            <span class="project-tag">university</span>
-            
-            <span class="project-tag">workshop</span>
-            
-            <span class="project-tag">pedagogy</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/design-educators-forum/" class="grid-card__title">Typography Educators Forum</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2019</span>
           </div>
-          
-
-          
-          <a href="/projects/design-educators-forum/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2019</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">education</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="catalyst"
-             data-subcat="conference"
-             data-type="community"
-             data-tags="conference,typography,sinhala,tamil,heritage,netherlands,dutch,history,colombo">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/akurucon-2018/" class="project-thumbnail-placeholder project-thumbnail-placeholder--catalyst">
-          <span>CONF</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/akurucon-2018/" class="project-card__title">AkuruCon 2018</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="conference"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/akurucon-2018/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">CONF</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">International typography conference celebrating 280 years of movable type in Sri Lanka.</p>
-        
-
-        
-        
-        <p class="project-card__body">AkuruCon was organised in collaboration with the Embassy of the Netherlands, Sri Lanka, to celebrate the 280th anniversary of the introduction of movable type in Sri Lanka.BackgroundIn 1738, Gabriel Schade, a Dutch pr...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">conference</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">tamil</span>
-            
-            <span class="project-tag">heritage</span>
-            
-            <span class="project-tag">netherlands</span>
-            
-            <span class="project-tag">dutch</span>
-            
-            <span class="project-tag">history</span>
-            
-            <span class="project-tag">colombo</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/akurucon-2018/" class="grid-card__title">AkuruCon 2018</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2018</span>
           </div>
-          
-
-          
-          <a href="/projects/akurucon-2018/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2018</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">conference</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="thinker"
-             data-subcat="research"
-             data-type="academic"
-             data-tags="sinhala,punctuation,typography,history,kundaliya,research,unicode">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/kundaliya-research/" class="project-thumbnail-placeholder project-thumbnail-placeholder--thinker">
-          <span>RESE</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/kundaliya-research/" class="project-card__title">Kundaliya: The Disappearance of a Sinhala Punctuation</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="research"
+        data-type="academic">
+        <div class="grid-card__thumb">
+          <a href="/projects/kundaliya-research/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">RESE</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Research into the historical disappearance of Kundaliya — the traditional Sinhala paragraph mark.</p>
-        
-
-        
-        
-        <p class="project-card__body">The Kundaliya (කුණ්ඩලිය) is a traditional Sinhala punctuation mark used historically as a paragraph and section delimiter in palm-leaf manuscripts and early printed texts. This research traces its gradual disappearanc...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">punctuation</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">history</span>
-            
-            <span class="project-tag">kundaliya</span>
-            
-            <span class="project-tag">research</span>
-            
-            <span class="project-tag">unicode</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/kundaliya-research/" class="grid-card__title">Kundaliya: The Disappearance of a Sinhala Punctuation</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2017</span>
           </div>
-          
-
-          
-          <a href="/projects/kundaliya-research/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2017</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">research</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="catalyst"
-             data-subcat="community"
-             data-type="community"
-             data-tags="community,colombo,typography,meetup,sinhala,sri-lanka,events">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/colombo-type/" class="project-thumbnail-placeholder project-thumbnail-placeholder--catalyst">
-          <span>COMM</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/colombo-type/" class="project-card__title">ColomboType</a>
-          
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="community"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/colombo-type/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">COMM</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Regular typography community meetups in Colombo — a space for letterform enthusiasts.</p>
-        
-
-        
-        
-        <p class="project-card__body">ColomboType started on one rainy Saturday evening in Colombo, when a room full of type aficionados of all shapes and sizes gathered, united by their love for typography. The common opinion was to provide a platform to...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">community</span>
-            
-            <span class="project-tag">colombo</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">meetup</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">events</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/colombo-type/" class="grid-card__title">ColomboType</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2017–2025</span>
           </div>
-          
-
-          
-          <a href="/projects/colombo-type/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2017 –2025</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">community</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="catalyst"
-             data-subcat="conference"
-             data-type="community"
-             data-tags="conference,typography,india,sri-lanka,colombo,typoday,iit-bombay,moratuwa">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/typoday-2017/" class="project-thumbnail-placeholder project-thumbnail-placeholder--catalyst">
-          <span>CONF</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/typoday-2017/" class="project-card__title">Typoday 2017 — Colombo</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="conference"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/typoday-2017/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">CONF</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">International typography conference co-organised in Colombo, Sri Lanka — a founding moment for the Akuru Collective.</p>
-        
-
-        
-        
-        <p class="project-card__body">Typoday 2017 was an international typography event organised by the Department of Integrated Design, University of Moratuwa (DID, UoM) in collaboration with the Industrial Design Centre (IDC) of the Indian Institute o...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">conference</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">india</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">colombo</span>
-            
-            <span class="project-tag">typoday</span>
-            
-            <span class="project-tag">iit-bombay</span>
-            
-            <span class="project-tag">moratuwa</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/typoday-2017/" class="grid-card__title">Typoday 2017 — Colombo</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2017–2017</span>
           </div>
-          
-
-          
-          <a href="/projects/typoday-2017/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2017 –2017</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">conference</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="thinker"
-             data-subcat="research"
-             data-type="personal"
-             data-tags="sinhala,digital-typography,web,research,fonts,sri-lanka,status-report">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/sinhala-digital-typography/" class="project-thumbnail-placeholder project-thumbnail-placeholder--thinker">
-          <span>RESE</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/sinhala-digital-typography/" class="project-card__title">State of Sinhala Digital Typography</a>
-          
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="research"
+        data-type="personal">
+        <div class="grid-card__thumb">
+          <a href="/projects/sinhala-digital-typography/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">RESE</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">A survey and assessment of the state of Sinhala typography on the web and in digital environments.</p>
-        
-
-        
-        
-        <p class="project-card__body">A research survey assessing the state of Sinhala typography in digital environments — covering available typefaces, rendering quality, web font usage, and the infrastructure needed to support quality Sinhala typograph...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">digital-typography</span>
-            
-            <span class="project-tag">web</span>
-            
-            <span class="project-tag">research</span>
-            
-            <span class="project-tag">fonts</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">status-report</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/sinhala-digital-typography/" class="grid-card__title">State of Sinhala Digital Typography</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2017</span>
           </div>
-          
-
-          
-          <a href="/projects/sinhala-digital-typography/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2017</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">research</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="catalyst"
-             data-subcat="community"
-             data-type="community"
-             data-tags="community,typography,sinhala,sri-lanka,akuru,letterforms,events">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/akuru-collective/" class="project-thumbnail-placeholder project-thumbnail-placeholder--catalyst">
-          <span>COMM</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/akuru-collective/" class="project-card__title">Akuru Collective</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="community"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/akuru-collective/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">COMM</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Co-founder of Akuru Collective — Sri Lanka's typography community, 2017–2025.</p>
-        
-
-        
-        
-        <p class="project-card__body">Akuru Collective (akuru.xyz) is a community of letterform enthusiasts in Sri Lanka, co-founded in 2017. Over eight years, the collective conducted over 30 community events and three major international conferences on ...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">community</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">akuru</span>
-            
-            <span class="project-tag">letterforms</span>
-            
-            <span class="project-tag">events</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/akuru-collective/" class="grid-card__title">Akuru Collective</a>
+          <div class="grid-card__meta">
+            <span>Catalyst</span>
+            <span>2017–2025</span>
           </div>
-          
-
-          
-          <a href="https://akuru.xyz" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2017 –2025</span>
-        <span class="project-card__subcat">catalyst</span>
-        <span class="project-card__type">community</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="thinker"
-             data-subcat="research"
-             data-type="academic"
-             data-tags="sinhala,typography,history,19th-century,ceylon,printing,colonial,research">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/sinhala-typography-19th-century/" class="project-thumbnail-placeholder project-thumbnail-placeholder--thinker">
-          <span>RESE</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/sinhala-typography-19th-century/" class="project-card__title">Milestones of Sinhala Typography in 19th Century Ceylon</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="research"
+        data-type="academic">
+        <div class="grid-card__thumb">
+          <a href="/projects/sinhala-typography-19th-century/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">RESE</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">A historical survey of key developments in Sinhala typography during the 19th century.</p>
-        
-
-        
-        
-        <p class="project-card__body">A research paper produced as part of the MA in Typeface Design at the University of Reading (2016), documenting the key typographic milestones in Sinhala typography during the 19th century in colonial Ceylon.Period Ov...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">history</span>
-            
-            <span class="project-tag">19th-century</span>
-            
-            <span class="project-tag">ceylon</span>
-            
-            <span class="project-tag">printing</span>
-            
-            <span class="project-tag">colonial</span>
-            
-            <span class="project-tag">research</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/sinhala-typography-19th-century/" class="grid-card__title">Milestones of Sinhala Typography in 19th Century Ceylon</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2016</span>
           </div>
-          
-
-          
-          <a href="/projects/sinhala-typography-19th-century/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2016</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">research</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--compact"
-             data-category="thinker"
-             data-subcat="research"
-             data-type="academic"
-             data-tags="ma,university-of-reading,typeface-design,academic,distinction,sinhala,research">
-
+      </article>
       
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/ma-reading/" class="project-card__title">MA in Typeface Design — University of Reading</a>
-          
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="research"
+        data-type="academic">
+        <div class="grid-card__thumb">
+          <a href="/projects/ma-reading/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">RESE</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">MA in Typeface Design with Distinction, University of Reading, UK (2016).</p>
-        
-
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">ma</span>
-            
-            <span class="project-tag">university-of-reading</span>
-            
-            <span class="project-tag">typeface-design</span>
-            
-            <span class="project-tag">academic</span>
-            
-            <span class="project-tag">distinction</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">research</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/ma-reading/" class="grid-card__title">MA in Typeface Design — University of Reading</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2016</span>
           </div>
-          
-
-          
-          <a href="/projects/ma-reading/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2016</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">research</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--compact"
-             data-category="thinker"
-             data-subcat="article"
-             data-type="personal"
-             data-tags="language,sinhala,tamil,mother-language-day,published,groundviews">
-
+      </article>
       
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/duality-of-language/" class="project-card__title">The Duality of Language: Marking International Mother Language Day</a>
-          
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="article"
+        data-type="personal">
+        <div class="grid-card__thumb">
+          <a href="/projects/duality-of-language/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">ARTI</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Essay marking International Mother Language Day, on the duality of linguistic identity in Sri Lanka.</p>
-        
-
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">language</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">tamil</span>
-            
-            <span class="project-tag">mother-language-day</span>
-            
-            <span class="project-tag">published</span>
-            
-            <span class="project-tag">groundviews</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/duality-of-language/" class="grid-card__title">The Duality of Language: Marking International Mother Language Day</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2016</span>
           </div>
-          
-
-          
-          <a href="http://groundviews.org/2016/02/19/the-duality-of-language-marking-international-mother-language-day/" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2016</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">article</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="thinker"
-             data-subcat="article"
-             data-type="personal"
-             data-tags="sinhala,tamil,reconciliation,letterforms,writing,communication-arts,published">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/finding-common-language/" class="project-thumbnail-placeholder project-thumbnail-placeholder--thinker">
-          <span>ARTI</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/finding-common-language/" class="project-card__title">Finding a Common Language</a>
-          
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="article"
+        data-type="personal">
+        <div class="grid-card__thumb">
+          <a href="/projects/finding-common-language/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">ARTI</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Reconciliation and revival through letterforms — published in Communication Arts.</p>
-        
-
-        
-        
-        <p class="project-card__body">An article published in Communication Arts exploring how letterforms can serve as a medium for cultural reconciliation between Sinhala and Tamil communities in Sri Lanka.ArgumentThe article argues that the act of desi...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">tamil</span>
-            
-            <span class="project-tag">reconciliation</span>
-            
-            <span class="project-tag">letterforms</span>
-            
-            <span class="project-tag">writing</span>
-            
-            <span class="project-tag">communication-arts</span>
-            
-            <span class="project-tag">published</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/finding-common-language/" class="grid-card__title">Finding a Common Language</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2015</span>
           </div>
-          
-
-          
-          <a href="http://www.commarts.com/column/finding-common-language" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2015</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">article</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="designer"
-             data-subcat="typeface-design"
-             data-type="personal"
-             data-tags="sinhala,tamil,multilingual,open-source,typeface-design,sri-lanka,type-foundry">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/mooniak/" class="project-thumbnail-placeholder project-thumbnail-placeholder--designer">
-          <span>TYPE</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/mooniak/" class="project-card__title">Mooniak</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="designer"
+        data-subcat="typeface-design"
+        data-type="personal">
+        <div class="grid-card__thumb">
+          <a href="/projects/mooniak/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--designer">TYPE</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Co-founder and Managing Director of Sri Lanka's leading multilingual type foundry.</p>
-        
-
-        
-        
-        <p class="project-card__body">Mooniak is a type foundry and typographic design studio based in Colombo, Sri Lanka, co-founded in 2015. It is the leading studio for multilingual fonts, typography and text technology in Sri Lanka and the region.What...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">tamil</span>
-            
-            <span class="project-tag">multilingual</span>
-            
-            <span class="project-tag">open-source</span>
-            
-            <span class="project-tag">typeface-design</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">type-foundry</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/mooniak/" class="grid-card__title">Mooniak</a>
+          <div class="grid-card__meta">
+            <span>Designer</span>
+            <span>2015–2099</span>
           </div>
-          
-
-          
-          <a href="https://mooniak.com" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2015 –2099</span>
-        <span class="project-card__subcat">designer</span>
-        <span class="project-card__type">typeface design</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--compact"
-             data-category="thinker"
-             data-subcat="talk"
-             data-type="community"
-             data-tags="talk,libre-graphics,open-source,indic,sinhala,toronto,london,lgm">
-
+      </article>
       
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/lgm-talks/" class="project-card__title">Libre Graphics Meeting Talks</a>
-          
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="talk"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/lgm-talks/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">TALK</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Talks at Libre Graphics Meeting in Toronto (2015) and London (2016) on Indic text in free software.</p>
-        
-
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">talk</span>
-            
-            <span class="project-tag">libre-graphics</span>
-            
-            <span class="project-tag">open-source</span>
-            
-            <span class="project-tag">indic</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">toronto</span>
-            
-            <span class="project-tag">london</span>
-            
-            <span class="project-tag">lgm</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/lgm-talks/" class="grid-card__title">Libre Graphics Meeting Talks</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2015–2016</span>
           </div>
-          
-
-          
-          <a href="/projects/lgm-talks/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2015 –2016</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">talk</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--compact"
-             data-category="thinker"
-             data-subcat="article"
-             data-type="personal"
-             data-tags="open-source,libre,fonts,free-software,published,pool-india">
-
+      </article>
       
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/freeing-fonts/" class="project-card__title">Freeing Fonts</a>
-          
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="article"
+        data-type="personal">
+        <div class="grid-card__thumb">
+          <a href="/projects/freeing-fonts/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">ARTI</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Article on the free and open-source font movement — published in Pool India.</p>
-        
-
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">open-source</span>
-            
-            <span class="project-tag">libre</span>
-            
-            <span class="project-tag">fonts</span>
-            
-            <span class="project-tag">free-software</span>
-            
-            <span class="project-tag">published</span>
-            
-            <span class="project-tag">pool-india</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/freeing-fonts/" class="grid-card__title">Freeing Fonts</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2015</span>
           </div>
-          
-
-          
-          <a href="http://www.indipool.com/freeing-fonts/" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2015</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">article</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--compact"
-             data-category="designer"
-             data-subcat="font-engineering"
-             data-type="community"
-             data-tags="unicode,sinhala,encoding,sls1134,standards,open-source,text-rendering">
-
+      </article>
       
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/sinhala-encoding/" class="project-card__title">Sinhala Script Encoding Standards</a>
-          
+      <article class="grid-card"
+        data-category="designer"
+        data-subcat="font-engineering"
+        data-type="community">
+        <div class="grid-card__thumb">
+          <a href="/projects/sinhala-encoding/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--designer">FONT</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Contributions to Unicode and SLS1134 standards for Sinhala script encoding and text rendering.</p>
-        
-
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">unicode</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">encoding</span>
-            
-            <span class="project-tag">sls1134</span>
-            
-            <span class="project-tag">standards</span>
-            
-            <span class="project-tag">open-source</span>
-            
-            <span class="project-tag">text-rendering</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/sinhala-encoding/" class="grid-card__title">Sinhala Script Encoding Standards</a>
+          <div class="grid-card__meta">
+            <span>Designer</span>
+            <span>2014–2099</span>
           </div>
-          
-
-          
-          <a href="https://unicode.org" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2014 –2099</span>
-        <span class="project-card__subcat">designer</span>
-        <span class="project-card__type">font engineering</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="thinker"
-             data-subcat="research"
-             data-type="academic"
-             data-tags="sinhala,tamil,typography,politics,conflict,history,sri-lanka,research">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/political-conflict-typography/" class="project-thumbnail-placeholder project-thumbnail-placeholder--thinker">
-          <span>RESE</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/political-conflict-typography/" class="project-card__title">A Typographic History of the Sri Lankan Political Conflict</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="thinker"
+        data-subcat="research"
+        data-type="academic">
+        <div class="grid-card__thumb">
+          <a href="/projects/political-conflict-typography/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">RESE</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Examining how typography was used as a tool of political identity and conflict in Sri Lanka.</p>
-        
-
-        
-        
-        <p class="project-card__body">A research paper examining the role of typography and visual language in shaping and reflecting the ethnic and political conflict in Sri Lanka from the mid-20th century onwards.PremiseTypography is never neutral. In a...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">tamil</span>
-            
-            <span class="project-tag">typography</span>
-            
-            <span class="project-tag">politics</span>
-            
-            <span class="project-tag">conflict</span>
-            
-            <span class="project-tag">history</span>
-            
-            <span class="project-tag">sri-lanka</span>
-            
-            <span class="project-tag">research</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/political-conflict-typography/" class="grid-card__title">A Typographic History of the Sri Lankan Political Conflict</a>
+          <div class="grid-card__meta">
+            <span>Thinker</span>
+            <span>2014</span>
           </div>
-          
-
-          
-          <a href="/projects/political-conflict-typography/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2014</span>
-        <span class="project-card__subcat">thinker</span>
-        <span class="project-card__type">research</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="designer"
-             data-subcat="font-engineering"
-             data-type="open-source"
-             data-tags="open-source,libre,sinhala,fonts,free-software,unicode,github">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/libre-fonts/" class="project-thumbnail-placeholder project-thumbnail-placeholder--designer">
-          <span>FONT</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/libre-fonts/" class="project-card__title">Free and Open Source Font Projects</a>
-          
+      <article class="grid-card"
+        data-category="designer"
+        data-subcat="font-engineering"
+        data-type="open-source">
+        <div class="grid-card__thumb">
+          <a href="/projects/libre-fonts/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--designer">FONT</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Ongoing contributions to free and open-source font projects for Sinhala and South Asian scripts.</p>
-        
-
-        
-        
-        <p class="project-card__body">A sustained commitment to building and maintaining free and open-source typefaces for Sinhala, Tamil, and other South Asian scripts — making quality typography available to everyone.PhilosophyTypography is infrastruct...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">open-source</span>
-            
-            <span class="project-tag">libre</span>
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">fonts</span>
-            
-            <span class="project-tag">free-software</span>
-            
-            <span class="project-tag">unicode</span>
-            
-            <span class="project-tag">github</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/libre-fonts/" class="grid-card__title">Free and Open Source Font Projects</a>
+          <div class="grid-card__meta">
+            <span>Designer</span>
+            <span>2013–2099</span>
           </div>
-          
-
-          
-          <a href="https://github.com/mooniak" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2013 –2099</span>
-        <span class="project-card__subcat">designer</span>
-        <span class="project-card__type">font engineering</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="designer"
-             data-subcat="font-engineering"
-             data-type="client-work"
-             data-tags="google-fonts,indian-scripts,south-asia,consultancy,font-engineering,open-source">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/google-fonts-consultancy/" class="project-thumbnail-placeholder project-thumbnail-placeholder--designer">
-          <span>FONT</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/google-fonts-consultancy/" class="project-card__title">Google Fonts Consultancy</a>
-          
+      <article class="grid-card"
+        data-category="designer"
+        data-subcat="font-engineering"
+        data-type="client-work">
+        <div class="grid-card__thumb">
+          <a href="/projects/google-fonts-consultancy/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--designer">FONT</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">Type design and consultancy for Google Fonts covering the South Asian / Indian region.</p>
-        
-
-        
-        
-        <p class="project-card__body">From 2013 to 2015, worked as a consultant for the Google Fonts service with a focus on the Indian region. The role involved:Scope  Reviewing and advising on font submissions for Indian and South Asian scripts  Providi...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">google-fonts</span>
-            
-            <span class="project-tag">indian-scripts</span>
-            
-            <span class="project-tag">south-asia</span>
-            
-            <span class="project-tag">consultancy</span>
-            
-            <span class="project-tag">font-engineering</span>
-            
-            <span class="project-tag">open-source</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/google-fonts-consultancy/" class="grid-card__title">Google Fonts Consultancy</a>
+          <div class="grid-card__meta">
+            <span>Designer</span>
+            <span>2013–2015</span>
           </div>
-          
-
-          
-          <a href="https://fonts.google.com" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2013 –2015</span>
-        <span class="project-card__subcat">designer</span>
-        <span class="project-card__type">font engineering</span>
-      </div>
-    </article>
-    
-    <article class="project-card project-card--no-image"
-             data-category="designer"
-             data-subcat="typeface-design"
-             data-type="academic"
-             data-tags="sinhala,tamil,multilingual,typeface-design,hybrid,graduation-project,aod">
-
+      </article>
       
-      <div class="project-card__image">
-        
-        <a href="/projects/amma-typeface/" class="project-thumbnail-placeholder project-thumbnail-placeholder--designer">
-          <span>TYPE</span>
-        </a>
-        
-      </div>
-      
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="/projects/amma-typeface/" class="project-card__title">Amma — Hybrid Sinhala Tamil Typeface</a>
-          <span class="badge-new">NEW</span>
+      <article class="grid-card"
+        data-category="designer"
+        data-subcat="typeface-design"
+        data-type="academic">
+        <div class="grid-card__thumb">
+          <a href="/projects/amma-typeface/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--designer">TYPE</span>
+            
+          </a>
         </div>
-
-        
-        <p class="project-card__subtitle">A graduation typeface project exploring the shared visual space between Sinhala and Tamil letterforms.</p>
-        
-
-        
-        
-        <p class="project-card__body">Amma is a hybrid typeface exploring the visual and cultural intersections of Sinhala and Tamil script letterforms. Developed as a graduation project at the Academy of Design (AOD), Colombo in 2013, it gained internati...</p>
-        
-        
-
-        <div class="project-card__footer">
-          
-          <div class="project-card__tags">
-            
-            <span class="project-tag">sinhala</span>
-            
-            <span class="project-tag">tamil</span>
-            
-            <span class="project-tag">multilingual</span>
-            
-            <span class="project-tag">typeface-design</span>
-            
-            <span class="project-tag">hybrid</span>
-            
-            <span class="project-tag">graduation-project</span>
-            
-            <span class="project-tag">aod</span>
-            
+        <div class="grid-card__info">
+          <a href="/projects/amma-typeface/" class="grid-card__title">Amma — Hybrid Sinhala Tamil Typeface</a>
+          <div class="grid-card__meta">
+            <span>Designer</span>
+            <span>2013</span>
           </div>
-          
-
-          
-          <a href="/projects/amma-typeface/" class="btn-action">READ →</a>
-          
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">2013</span>
-        <span class="project-card__subcat">designer</span>
-        <span class="project-card__type">typeface design</span>
-      </div>
-    </article>
-    
+      </article>
+      
+    </div>
   </div>
 
 </div>
 
 <script>
-(function() {
-  var cards = Array.from(document.querySelectorAll('.project-card'));
+(function () {
+  var cards = Array.from(document.querySelectorAll('.grid-card'));
   var countEl = document.getElementById('visible-count');
-
-  var activeCategory = 'all';
-  var activeSubcat   = 'all';
-  var activeType     = 'all';
-
-  function updateCount() {
-    var visible = cards.filter(function(c) { return c.style.display !== 'none'; }).length;
-    if (countEl) countEl.textContent = visible;
-  }
+  var active = { category: 'all', subcat: 'all', type: 'all' };
 
   function applyFilters() {
-    cards.forEach(function(card) {
-      var ok = (activeCategory === 'all' || card.dataset.category === activeCategory)
-            && (activeSubcat   === 'all' || card.dataset.subcat    === activeSubcat)
-            && (activeType     === 'all' || card.dataset.type      === activeType);
-      card.style.display = ok ? '' : 'none';
+    var n = 0;
+    cards.forEach(function (c) {
+      var show = (active.category === 'all' || c.dataset.category === active.category)
+              && (active.subcat   === 'all' || c.dataset.subcat    === active.subcat)
+              && (active.type     === 'all' || c.dataset.type      === active.type);
+      c.style.display = show ? '' : 'none';
+      if (show) n++;
     });
-    updateCount();
+    if (countEl) countEl.textContent = n;
   }
 
-  function bindGroup(group, setter) {
-    document.querySelectorAll('[data-group="' + group + '"]').forEach(function(pill) {
-      pill.addEventListener('click', function() {
-        document.querySelectorAll('[data-group="' + group + '"]').forEach(function(p) { p.classList.remove('active'); });
-        pill.classList.add('active');
-        setter(pill.dataset.filter);
-        applyFilters();
-      });
+  document.querySelectorAll('.filter-pill').forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var group = pill.dataset.group;
+      document.querySelectorAll('[data-group="' + group + '"]').forEach(function (p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      active[group] = pill.dataset.filter;
+      applyFilters();
     });
-  }
-
-  bindGroup('category', function(v) { activeCategory = v; });
-  bindGroup('subcat',   function(v) { activeSubcat   = v; });
-  bindGroup('type',     function(v) { activeType     = v; });
-})();
+  });
+}());
 </script>
 
   </main>
@@ -2019,6 +737,5 @@
   </div>
 </footer>
 
-  
 </body>
 </html>

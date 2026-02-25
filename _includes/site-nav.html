@@ -1,6 +1,8 @@
 <nav class="site-nav">
-  <a href="/" class="site-nav__title">Pathum Egodawatta</a>
-  <ul class="site-nav__links">
-    <li><a href="/work" {% if page.layout == 'work' or page.url == '/work/' %}class="active"{% endif %}>Work</a></li>
-  </ul>
+  <div class="site-nav__inner">
+    <a href="/" class="site-nav__title">Pathum Egodawatta</a>
+    <ul class="site-nav__links">
+      <li><a href="/work" {% if page.url contains '/work' %}class="active"{% endif %}>Work</a></li>
+    </ul>
+  </div>
 </nav>

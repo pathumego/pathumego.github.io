@@ -1,171 +1,109 @@
 ---
 layout: default
-dark_theme: true
 ---
 
 {% assign all_projects = site.projects | sort: "date" | reverse %}
 {% assign subcategories = all_projects | map: "subcategory" | uniq | sort %}
-{% assign work_types = all_projects | map: "type" | uniq | sort %}
+{% assign work_types    = all_projects | map: "type"        | uniq | sort %}
 
 <div class="category-page">
 
-  <!-- Top header + filter bar -->
   <div class="category-header">
-    <div class="category-header__top">
+    <div class="category-header__inner">
       <h1 class="category-header__title">{{ page.title | default: "Work" }}</h1>
-    </div>
+      <div class="category-filters">
 
-    <div class="category-filters">
-
-      <!-- Category filter row -->
-      <div class="filter-row">
-        <span class="filter-row__label">Category</span>
-        <div class="filter-pills">
-          <button class="filter-pill active" data-filter="all" data-group="category">All</button>
-          <button class="filter-pill" data-filter="designer" data-group="category">Designer</button>
-          <button class="filter-pill" data-filter="thinker" data-group="category">Thinker</button>
-          <button class="filter-pill" data-filter="catalyst" data-group="category">Catalyst</button>
+        <div class="filter-row">
+          <span class="filter-row__label">Category</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all"      data-group="category">All</button>
+            <button class="filter-pill"        data-filter="designer" data-group="category">Designer</button>
+            <button class="filter-pill"        data-filter="thinker"  data-group="category">Thinker</button>
+            <button class="filter-pill"        data-filter="catalyst" data-group="category">Catalyst</button>
+          </div>
         </div>
-      </div>
 
-      <!-- Subcategory filter row -->
-      <div class="filter-row">
-        <span class="filter-row__label">Type</span>
-        <div class="filter-pills">
-          <button class="filter-pill active" data-filter="all" data-group="subcat">All</button>
-          {% for subcat in subcategories %}
-            {% if subcat and subcat != "" %}
-            <button class="filter-pill" data-filter="{{ subcat }}" data-group="subcat">
-              {{ subcat | replace: "-", " " | capitalize }}
-            </button>
-            {% endif %}
-          {% endfor %}
+        <div class="filter-row">
+          <span class="filter-row__label">Type</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all" data-group="subcat">All</button>
+            {% for s in subcategories %}{% if s and s != "" %}
+            <button class="filter-pill" data-filter="{{ s }}" data-group="subcat">{{ s | replace: "-", " " | capitalize }}</button>
+            {% endif %}{% endfor %}
+          </div>
         </div>
-      </div>
 
-      <!-- Work type filter row -->
-      <div class="filter-row">
-        <span class="filter-row__label">Context</span>
-        <div class="filter-pills">
-          <button class="filter-pill active" data-filter="all" data-group="type">All</button>
-          {% for wtype in work_types %}
-            {% if wtype and wtype != "" %}
-            <button class="filter-pill" data-filter="{{ wtype }}" data-group="type">
-              {{ wtype | replace: "-", " " | capitalize }}
-            </button>
-            {% endif %}
-          {% endfor %}
+        <div class="filter-row">
+          <span class="filter-row__label">Context</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all" data-group="type">All</button>
+            {% for t in work_types %}{% if t and t != "" %}
+            <button class="filter-pill" data-filter="{{ t }}" data-group="type">{{ t | replace: "-", " " | capitalize }}</button>
+            {% endif %}{% endfor %}
+          </div>
+          <span class="project-count"><span id="visible-count">{{ all_projects | size }}</span> projects</span>
         </div>
-        <span class="project-count"><span id="visible-count">{{ all_projects | size }}</span> projects</span>
-      </div>
 
+      </div>
     </div>
   </div>
 
-  <!-- Projects list -->
-  <div class="projects-list" id="projects-list">
-    {% for project in all_projects %}
-    <article class="project-card{% if project.compact %} project-card--compact{% elsif project.thumbnail == nil or project.thumbnail == "" %} project-card--no-image{% endif %}"
-             data-category="{{ project.category }}"
-             data-subcat="{{ project.subcategory }}"
-             data-type="{{ project.type }}"
-             data-tags="{{ project.tags | join: ',' }}">
-
-      {% unless project.compact %}
-      <div class="project-card__image">
-        {% if project.thumbnail %}
-        <a href="{{ project.url }}">
-          <img src="{{ project.thumbnail }}" alt="{{ project.title }}" class="project-thumbnail" loading="lazy">
-        </a>
-        {% else %}
-        <a href="{{ project.url }}" class="project-thumbnail-placeholder project-thumbnail-placeholder--{{ project.category }}">
-          <span>{{ project.subcategory | upcase | truncate: 4, "" }}</span>
-        </a>
-        {% endif %}
-      </div>
-      {% endunless %}
-
-      <div class="project-card__content">
-        <div class="project-card__header">
-          <a href="{{ project.url }}" class="project-card__title">{{ project.title }}</a>
-          {% if project.featured %}<span class="badge-new">NEW</span>{% endif %}
+  <div class="projects-list-wrap">
+    <div class="projects-grid" id="projects-list">
+      {% for project in all_projects %}
+      <article class="grid-card"
+        data-category="{{ project.category }}"
+        data-subcat="{{ project.subcategory }}"
+        data-type="{{ project.type }}">
+        <div class="grid-card__thumb">
+          <a href="{{ project.url }}">
+            {% if project.thumbnail %}
+            <img src="{{ project.thumbnail }}" alt="{{ project.title }}" loading="lazy">
+            {% else %}
+            <span class="grid-card__placeholder grid-card__placeholder--{{ project.category }}">{{ project.subcategory | upcase | truncate: 4, "" }}</span>
+            {% endif %}
+          </a>
         </div>
-
-        {% if project.description %}
-        <p class="project-card__subtitle">{{ project.description }}</p>
-        {% endif %}
-
-        {% unless project.compact %}
-        {% if project.content and project.content != "" %}
-        <p class="project-card__body">{{ project.content | strip_html | strip_newlines | truncate: 220 }}</p>
-        {% endif %}
-        {% endunless %}
-
-        <div class="project-card__footer">
-          {% if project.tags %}
-          <div class="project-card__tags">
-            {% for tag in project.tags %}
-            <span class="project-tag">{{ tag }}</span>
-            {% endfor %}
+        <div class="grid-card__info">
+          <a href="{{ project.url }}" class="grid-card__title">{{ project.title }}</a>
+          <div class="grid-card__meta">
+            <span>{{ project.category | capitalize }}</span>
+            <span>{{ project.date | date: "%Y" }}{% if project.end_date %}–{{ project.end_date | date: "%Y" }}{% endif %}</span>
           </div>
-          {% endif %}
-
-          {% if project.link %}
-          <a href="{{ project.link }}" target="_blank" rel="noopener" class="btn-action">VIEW ↗</a>
-          {% else %}
-          <a href="{{ project.url }}" class="btn-action">READ →</a>
-          {% endif %}
         </div>
-      </div>
-
-      <div class="project-card__meta">
-        <span class="project-card__date">{{ project.date | date: "%Y" }}{% if project.end_date %} –{{ project.end_date | date: "%Y" }}{% endif %}</span>
-        <span class="project-card__subcat">{{ project.category }}</span>
-        <span class="project-card__type">{{ project.subcategory | replace: "-", " " }}</span>
-      </div>
-    </article>
-    {% endfor %}
+      </article>
+      {% endfor %}
+    </div>
   </div>
 
 </div>
 
 <script>
-(function() {
-  var cards = Array.from(document.querySelectorAll('.project-card'));
+(function () {
+  var cards = Array.from(document.querySelectorAll('.grid-card'));
   var countEl = document.getElementById('visible-count');
-
-  var activeCategory = 'all';
-  var activeSubcat   = 'all';
-  var activeType     = 'all';
-
-  function updateCount() {
-    var visible = cards.filter(function(c) { return c.style.display !== 'none'; }).length;
-    if (countEl) countEl.textContent = visible;
-  }
+  var active = { category: 'all', subcat: 'all', type: 'all' };
 
   function applyFilters() {
-    cards.forEach(function(card) {
-      var ok = (activeCategory === 'all' || card.dataset.category === activeCategory)
-            && (activeSubcat   === 'all' || card.dataset.subcat    === activeSubcat)
-            && (activeType     === 'all' || card.dataset.type      === activeType);
-      card.style.display = ok ? '' : 'none';
+    var n = 0;
+    cards.forEach(function (c) {
+      var show = (active.category === 'all' || c.dataset.category === active.category)
+              && (active.subcat   === 'all' || c.dataset.subcat    === active.subcat)
+              && (active.type     === 'all' || c.dataset.type      === active.type);
+      c.style.display = show ? '' : 'none';
+      if (show) n++;
     });
-    updateCount();
+    if (countEl) countEl.textContent = n;
   }
 
-  function bindGroup(group, setter) {
-    document.querySelectorAll('[data-group="' + group + '"]').forEach(function(pill) {
-      pill.addEventListener('click', function() {
-        document.querySelectorAll('[data-group="' + group + '"]').forEach(function(p) { p.classList.remove('active'); });
-        pill.classList.add('active');
-        setter(pill.dataset.filter);
-        applyFilters();
-      });
+  document.querySelectorAll('.filter-pill').forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var group = pill.dataset.group;
+      document.querySelectorAll('[data-group="' + group + '"]').forEach(function (p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      active[group] = pill.dataset.filter;
+      applyFilters();
     });
-  }
-
-  bindGroup('category', function(v) { activeCategory = v; });
-  bindGroup('subcat',   function(v) { activeSubcat   = v; });
-  bindGroup('type',     function(v) { activeType     = v; });
-})();
+  });
+}());
 </script>

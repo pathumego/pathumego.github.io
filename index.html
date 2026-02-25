@@ -1,81 +1,92 @@
 ---
 layout: default
+hide_nav: true
 ---
 
-<style>
-  html, body {
-    background-color: #fffdf6 !important;
-    color: #000000 !important;
-  }
-  * { color: inherit; }
-</style>
+<div class="homepage">
+  <div class="pe-text" id="pe-text">peපැபெ</div>
 
-<div class="pe-text" id="pe-text">peපැபெ෴</div>
+  <p class="txt">
+    Pathum Egodawatta is an interdisciplinary designer,<br>
+    thinker, and catalyst working at the intersections of<br>
+    type, text, design, code, and culture.෴
+  </p>
 
-<p class="txt">
-  Pathum Egodawatta is an interdisciplinary designer,<br>
-  thinker, and catalyst working at the intersections of<br>
-  type, text, design, code, and culture.
-</p>
+  <p class="txt-2">
+    Pathum specializes in Sinhala and Tamil script typography and South Asian visual cultures.
+    Based in Colombo, Sri Lanka, his practice sits at the intersection of culture and technology,
+    spanning typography, typeface design, archival research, language technology, and community building.෴
+  </p>
 
-<p class="txt">෴෴෴෴෴෴</p>
+  <p class="hero-txt">
+    He is co-founder and Managing Partner of Mooniak, a type foundry and typographic design studio
+    pioneering Sinhala + Tamil multi-script fonts and maintaining a large collection of Free and Open
+    Source font projects. He co-founded Akuru Collective, a community that led over 30 events including
+    three major international typography conferences in Sri Lanka. He currently serves as the Chief
+    Curator of the W A Silva Museum for Language, Literature and Typography in Colombo, working to
+    preserve and make accessible Sri Lanka's language and typographic heritage. He teaches typography,
+    talks about design and ponders about future of civilisation.෴
+  </p>
 
-<p class="txt-2">
-  Pathum specializes in Sinhala and Tamil script typography and South Asian visual cultures.
-  Based in Colombo, Sri Lanka, his practice sits at the intersection of culture and technology,
-  spanning typography, typeface design, archival research, language technology, and community building.
-</p>
+  <nav class="category-nav">
+    <a href="/work" class="category-nav__link">View all work →</a>
+  </nav>
+</div>
 
-<p class="hero-txt">
-  He is co co-founder and Managing Prtner of Mooniak, a type foundry and typographic design studio
-  pioneering Sinhala + Tamil multi-script fonts and maintaining a large collection of Free and Open
-  Source font projects. He co-founded Akuru Collective, a community that led over 30 events including
-  three major international typography conferences in Sri Lanka. He currently serves as the Chief
-  Curator of the W A Silva Museum for Language, Literature and Typography in Colombo, working to
-  preserve and make accessible Sri Lanka's language and typographic heritage. He teaches typography,
-  talks about design and ponders about future of civilisation.
-</p>
+{% assign all_projects = site.projects | sort: "date" | reverse %}
 
-<nav class="category-nav">
-  <a href="/work" class="category-nav__link category-nav__link--work">View all work</a>
-</nav>
+<div class="homepage-projects">
+  <p class="homepage-projects__heading">Selected work</p>
+  <div class="projects-grid">
+    {% for project in all_projects %}
+    <article class="grid-card">
+      <div class="grid-card__thumb">
+        <a href="{{ project.url }}">
+          {% if project.thumbnail %}
+          <img src="{{ project.thumbnail }}" alt="{{ project.title }}" loading="lazy">
+          {% else %}
+          <span class="grid-card__placeholder grid-card__placeholder--{{ project.category }}">{{ project.subcategory | upcase | truncate: 4, "" }}</span>
+          {% endif %}
+        </a>
+      </div>
+      <div class="grid-card__info">
+        <a href="{{ project.url }}" class="grid-card__title">{{ project.title }}</a>
+        <div class="grid-card__meta">
+          <span>{{ project.category | capitalize }}</span>
+          <span>{{ project.date | date: "%Y" }}{% if project.end_date %}–{{ project.end_date | date: "%Y" }}{% endif %}</span>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>
 
 <script>
-(function() {
-  const peText = document.getElementById('pe-text');
+(function () {
+  var peText = document.getElementById('pe-text');
+  var autoW = 400, autoS = 0, autoSt = 100;
+  var wDir = 1, sDir = 1, stDir = -1;
+  var mInf = 0, mW = 400, mS = 0, mSt = 100;
+  var W0 = 100, W1 = 800, S0 = 0, S1 = 12, ST0 = 20, ST1 = 100;
 
-  let autoWeight = 400, autoSlant = 0, autoStroke = 100;
-  let weightDir = 1, slantDir = 1, strokeDir = -1;
-  let mouseInfluence = 0, mouseWeight = 400, mouseSlant = 0, mouseStroke = 100;
-
-  const W_MIN = 100, W_MAX = 800, S_MIN = 0, S_MAX = 12, ST_MIN = 20, ST_MAX = 100;
-  const W_SPD = 3, S_SPD = 0.8, ST_SPD = 2, DECAY = 0.02;
-
-  document.addEventListener('mousemove', (e) => {
-    const w = window.innerWidth, h = window.innerHeight;
-    mouseWeight = Math.round((e.clientX / w) * (W_MAX - W_MIN)) + W_MIN;
-    mouseSlant = (e.clientY / h) * (S_MAX - S_MIN) + S_MIN;
-    mouseStroke = Math.round((1 - e.clientY / h) * (ST_MAX - ST_MIN)) + ST_MIN;
-    mouseInfluence = 1;
+  document.addEventListener('mousemove', function (e) {
+    mW  = Math.round((e.clientX / innerWidth)  * (W1  - W0)  + W0);
+    mS  =            (e.clientY / innerHeight) * (S1  - S0)  + S0;
+    mSt = Math.round((1 - e.clientY / innerHeight) * (ST1 - ST0) + ST0);
+    mInf = 1;
   });
 
-  function animate() {
-    autoWeight += W_SPD * weightDir;
-    if (autoWeight >= W_MAX || autoWeight <= W_MIN) { weightDir *= -1; autoWeight = Math.max(W_MIN, Math.min(W_MAX, autoWeight)); }
-    autoSlant += S_SPD * slantDir;
-    if (autoSlant >= S_MAX || autoSlant <= S_MIN) { slantDir *= -1; autoSlant = Math.max(S_MIN, Math.min(S_MAX, autoSlant)); }
-    autoStroke += ST_SPD * strokeDir;
-    if (autoStroke >= ST_MAX || autoStroke <= ST_MIN) { strokeDir *= -1; autoStroke = Math.max(ST_MIN, Math.min(ST_MAX, autoStroke)); }
-
-    mouseInfluence = Math.max(0, mouseInfluence - DECAY);
-
-    const fw = Math.round(autoWeight * (1 - mouseInfluence) + mouseWeight * mouseInfluence);
-    const fs = autoSlant * (1 - mouseInfluence) + mouseSlant * mouseInfluence;
-    const fst = Math.round(autoStroke * (1 - mouseInfluence) + mouseStroke * mouseInfluence);
-
-    peText.style.fontVariationSettings = `'wght' ${fw}, 'slnt' ${fs}, 'YOPQ' ${fst}`;
-    requestAnimationFrame(animate);
+  function tick() {
+    autoW  += 3  * wDir;  if (autoW  >= W1  || autoW  <= W0)  { wDir  *= -1; autoW  = Math.max(W0,  Math.min(W1,  autoW));  }
+    autoS  += 0.8 * sDir; if (autoS  >= S1  || autoS  <= S0)  { sDir  *= -1; autoS  = Math.max(S0,  Math.min(S1,  autoS));  }
+    autoSt += 2  * stDir; if (autoSt >= ST1 || autoSt <= ST0) { stDir *= -1; autoSt = Math.max(ST0, Math.min(ST1, autoSt)); }
+    mInf = Math.max(0, mInf - 0.02);
+    var fw  = Math.round(autoW  * (1 - mInf) + mW  * mInf);
+    var fs  =            autoS  * (1 - mInf) + mS  * mInf;
+    var fst = Math.round(autoSt * (1 - mInf) + mSt * mInf);
+    peText.style.fontVariationSettings = "'wght' " + fw + ", 'slnt' " + fs + ", 'YOPQ' " + fst;
+    requestAnimationFrame(tick);
   }
-  animate();
-})();
+  tick();
+}());
 </script>
