@@ -9,26 +9,13 @@ hide_nav: true
   <p class="txt">
     Pathum Egodawatta is an interdisciplinary designer,<br>
     thinker, and catalyst working at the intersections of<br>
-    type, text, design, code, and culture.෴
+    type, text, design, code, and culture. <button class="bio-trigger" id="bio-t1" aria-label="Read more">෴</button>
   </p>
 
-  <p class="txt-2">
-    Pathum specializes in Sinhala and Tamil script typography and South Asian visual cultures.
-    Based in Colombo, Sri Lanka, his practice sits at the intersection of culture and technology,
-    spanning typography, typeface design, archival research, language technology, and community building.෴
-  </p>
+  <p class="txt-2" id="bio-p2" style="display:none"></p>
+  <p class="hero-txt" id="bio-p3" style="display:none"></p>
 
-  <p class="hero-txt">
-    He is co-founder and Managing Partner of Mooniak, a type foundry and typographic design studio
-    pioneering Sinhala + Tamil multi-script fonts and maintaining a large collection of Free and Open
-    Source font projects. He co-founded Akuru Collective, a community that led over 30 events including
-    three major international typography conferences in Sri Lanka. He currently serves as the Chief
-    Curator of the W A Silva Museum for Language, Literature and Typography in Colombo, working to
-    preserve and make accessible Sri Lanka's language and typographic heritage. He teaches typography,
-    talks about design and ponders about future of civilisation.෴
-  </p>
-
-  <nav class="category-nav">
+  <nav class="category-nav" id="bio-nav" style="display:none">
     <a href="/work" class="category-nav__link">View all work →</a>
   </nav>
 </div>
@@ -62,6 +49,7 @@ hide_nav: true
 </div>
 
 <script>
+/* --- pe-text variable font animation -------------------- */
 (function () {
   var peText = document.getElementById('pe-text');
   var autoW = 400, autoS = 0, autoSt = 100;
@@ -88,5 +76,74 @@ hide_nav: true
     requestAnimationFrame(tick);
   }
   tick();
+}());
+
+/* --- Bio progressive typing reveal --------------------- */
+(function () {
+  var SPEED = 12; // ms per character
+
+  var TEXT2 = 'Pathum specializes in Sinhala and Tamil script typography and South Asian visual cultures. Based in Colombo, Sri Lanka, his practice sits at the intersection of culture and technology, spanning typography, typeface design, archival research, language technology, and community building. ';
+
+  var TEXT3 = 'He is co-founder and Managing Partner of Mooniak, a type foundry and typographic design studio pioneering Sinhala + Tamil multi-script fonts and maintaining a large collection of Free and Open Source font projects. He co-founded Akuru Collective, a community that led over 30 events including three major international typography conferences in Sri Lanka. He currently serves as the Chief Curator of the W A Silva Museum for Language, Literature and Typography in Colombo, working to preserve and make accessible Sri Lanka\u2019s language and typographic heritage. He teaches typography, talks about design and ponders about future of civilisation. ';
+
+  /* Type text character by character into el, call onDone when finished */
+  function typeInto(el, text, onDone) {
+    var node = document.createTextNode('');
+    el.appendChild(node);
+    var i = 0;
+    var timer = setInterval(function () {
+      node.nodeValue += text[i++];
+      if (i >= text.length) {
+        clearInterval(timer);
+        if (onDone) onDone();
+      }
+    }, SPEED);
+  }
+
+  /* Create a clickable ෴ trigger button */
+  function makeTrigger(label) {
+    var btn = document.createElement('button');
+    btn.className = 'bio-trigger';
+    btn.textContent = '෴';
+    btn.setAttribute('aria-label', label);
+    return btn;
+  }
+
+  var t1  = document.getElementById('bio-t1');
+  var p2  = document.getElementById('bio-p2');
+  var p3  = document.getElementById('bio-p3');
+  var nav = document.getElementById('bio-nav');
+
+  /* --- Trigger 1: reveal block 2 --- */
+  t1.addEventListener('click', function () {
+    t1.classList.add('bio-trigger--used');
+    t1.disabled = true;
+
+    p2.style.display = 'block';
+
+    typeInto(p2, TEXT2, function () {
+      /* After block 2 finishes, append ෴ to trigger block 3 */
+      var t2 = makeTrigger('Read more');
+      p2.appendChild(t2);
+
+      /* --- Trigger 2: reveal block 3 --- */
+      t2.addEventListener('click', function () {
+        t2.classList.add('bio-trigger--used');
+        t2.disabled = true;
+
+        p3.style.display = 'block';
+
+        typeInto(p3, TEXT3, function () {
+          /* After block 3 finishes, append decorative ෴ + show nav */
+          var mark = document.createElement('span');
+          mark.className = 'bio-kundaliya';
+          mark.textContent = '෴';
+          p3.appendChild(mark);
+
+          nav.style.display = '';
+        });
+      });
+    });
+  });
 }());
 </script>

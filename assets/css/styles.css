@@ -233,6 +233,43 @@ h1, h2, h3, h4 {
   color: var(--bg);
 }
 
+/* --- Bio typing reveal ---------------------------------- */
+.bio-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline;
+  vertical-align: baseline;
+  user-select: none;
+  transition: color 0.15s, letter-spacing 0.2s, transform 0.15s;
+  letter-spacing: 0;
+}
+
+.bio-trigger:hover {
+  color: var(--fg);
+  letter-spacing: 0.12em;
+  transform: scale(1.15);
+  display: inline-block; /* needed for transform */
+}
+
+.bio-trigger--used {
+  color: var(--subtle);
+  pointer-events: none;
+  cursor: default;
+  letter-spacing: 0;
+  transform: none;
+}
+
+.bio-kundaliya {
+  color: var(--subtle);
+  user-select: none;
+}
+
 /* --- Homepage project grid ------------------------------ */
 .homepage-projects {
   width: 100%;
