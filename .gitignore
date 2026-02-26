@@ -1,2 +1,7 @@
 .DS_Store
 _site/
+_site/feed.xml
+_site/index.html
+_site/assets/css/styles.css
+_site/projects/lgm-talks/index.html
+_site/work/index.html

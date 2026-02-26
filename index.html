@@ -7,23 +7,14 @@ hide_nav: true
   <div class="pe-text" id="pe-text">peපැபெ</div>
 
   <div class="bio">
-    <p class="bio-text">
-      Pathum Egodawatta is an interdisciplinary designer,<br>
-      thinker, and catalyst working at the intersections of<br>
-      type, text, design, code, and culture. <button class="bio-trigger" id="bio-toggle" aria-expanded="false">෴</button>
-    </p>
-    <div class="bio-more" id="bio-more" style="display:none"></div>
+    <p class="bio-text" id="bio-p">Pathum Egodawatta is an interdisciplinary designer, thinker, and catalyst working at the intersections of type, text, design, code, and culture. <button class="bio-trigger" id="bio-toggle" aria-expanded="false">෴෴෴</button><span id="bio-more"></span></p>
   </div>
-
-  <nav class="category-nav" id="bio-nav" style="display:none">
-    <a href="/work" class="category-nav__link">View all work →</a>
-  </nav>
 </div>
 
 {% assign all_projects = site.projects | sort: "date" | reverse %}
 
 <div class="homepage-projects">
-  <p class="homepage-projects__heading">Selected work</p>
+  <p class="homepage-projects__heading">Selected work | <a href="/work">View all work →</a></p> 
   <div class="projects-grid">
     {% for project in all_projects %}
     <article class="grid-card">
@@ -81,69 +72,107 @@ hide_nav: true
 /* --- Bio typing reveal + collapse toggle ---------------- */
 (function () {
   var SPEED = 12;
+  var ERASE = 4;
 
   var TEXT2 = 'Pathum specializes in Sinhala and Tamil script typography and South Asian visual cultures. Based in Colombo, Sri Lanka, his practice sits at the intersection of culture and technology, spanning typography, typeface design, archival research, language technology, and community building. ';
   var TEXT3 = 'He is co-founder and Managing Partner of Mooniak, a type foundry and typographic design studio pioneering Sinhala + Tamil multi-script fonts and maintaining a large collection of Free and Open Source font projects. He co-founded Akuru Collective, a community that led over 30 events including three major international typography conferences in Sri Lanka. He currently serves as the Chief Curator of the W A Silva Museum for Language, Literature and Typography in Colombo, working to preserve and make accessible Sri Lanka\u2019s language and typographic heritage. He teaches typography, talks about design and ponders about future of civilisation. ';
 
-  var toggle = document.getElementById('bio-toggle');
-  var more   = document.getElementById('bio-more');
-  var nav    = document.getElementById('bio-nav');
+  var bioP    = document.getElementById('bio-p');
+  var toggle1 = document.getElementById('bio-toggle');
+  var more    = document.getElementById('bio-more');
 
-  var typed = false;
-  var open  = false;
+  /* Split the first text node at "Pathum Egodawatta" (17 chars).
+     node1 = " is an interdisciplinary...culture. " — visible by default,
+     only erased during collapse. */
+  var node1 = bioP.firstChild.splitText(17);
+
   var busy  = false;
+  var state = 0;
+  var node2, node3, btn2ref, btn3ref;
 
-  function typeInto(el, text, onDone) {
+  /* Create a text node in more just before cursorEl and type into it. */
+  function typeBefore(text, cursorEl, onDone) {
     var node = document.createTextNode('');
-    el.appendChild(node);
+    more.insertBefore(node, cursorEl);
     var i = 0;
     var timer = setInterval(function () {
       node.nodeValue += text[i++];
       if (i >= text.length) { clearInterval(timer); if (onDone) onDone(); }
     }, SPEED);
+    return node;
   }
 
-  function typeAll(onDone) {
-    var p2 = document.createElement('p');
-    p2.className = 'bio-text';
-    more.appendChild(p2);
-    typeInto(p2, TEXT2, function () {
-      var p3 = document.createElement('p');
-      p3.className = 'bio-text';
-      more.appendChild(p3);
-      typeInto(p3, TEXT3, function () {
-        var mark = document.createElement('span');
-        mark.className = 'bio-kundaliya';
-        mark.textContent = ' \u0dba\u0dba\u0dba';
-        p3.appendChild(mark);
+  function eraseNode(node, onDone) {
+    var timer = setInterval(function () {
+      if (node.nodeValue.length > 0) {
+        node.nodeValue = node.nodeValue.slice(0, -1);
+      } else {
+        clearInterval(timer);
         if (onDone) onDone();
+      }
+    }, ERASE);
+  }
+
+  /* Collapse: erase TEXT3 → remove btn3/btn2 → erase TEXT2 →
+     erase node1 (" is an...culture. ") → only "Pathum Egodawatta ෴෴෴" remains. */
+  function collapse() {
+    busy = true;
+    eraseNode(node3, function () {
+      btn3ref.remove();
+      btn2ref.remove();
+      eraseNode(node2, function () {
+        more.innerHTML = '';
+        eraseNode(node1, function () {
+          state            = 0;
+          busy             = false;
+          toggle1.disabled = false;
+          toggle1.setAttribute('aria-expanded', 'false');
+        });
       });
     });
   }
 
-  toggle.addEventListener('click', function () {
-    if (busy) return;
+  toggle1.addEventListener('click', function () {
+    if (busy || state !== 0) return;
+    busy  = true;
+    state = 1;
+    toggle1.setAttribute('aria-expanded', 'true');
+    toggle1.disabled = true;
 
-    if (open) {
-      open = false;
-      toggle.setAttribute('aria-expanded', 'false');
-      more.style.display = 'none';
-      nav.style.display  = 'none';
-    } else {
-      open = true;
-      toggle.setAttribute('aria-expanded', 'true');
-      more.style.display = '';
-      if (!typed) {
-        busy = true;
-        typeAll(function () {
-          typed = true;
-          busy  = false;
-          nav.style.display = '';
-        });
-      } else {
-        nav.style.display = '';
-      }
-    }
+    btn2ref = document.createElement('button');
+    btn2ref.className   = 'bio-trigger bio-trigger--cursor';
+    btn2ref.textContent = '\u0DF4\u0DF4';
+    btn2ref.disabled    = true;
+    btn2ref.setAttribute('aria-label', 'Read more');
+    more.appendChild(btn2ref);
+
+    node2 = typeBefore(TEXT2, btn2ref, function () {
+      btn2ref.classList.remove('bio-trigger--cursor');
+      btn2ref.disabled = false;
+      busy = false;
+    });
+
+    btn2ref.addEventListener('click', function () {
+      if (busy || state !== 1) return;
+      busy  = true;
+      state = 2;
+      btn2ref.disabled = true;
+
+      btn3ref = document.createElement('button');
+      btn3ref.className   = 'bio-trigger bio-trigger--cursor';
+      btn3ref.textContent = '\u0DF4';
+      btn3ref.disabled    = true;
+      btn3ref.setAttribute('aria-label', 'Collapse bio');
+      more.appendChild(btn3ref);
+
+      node3 = typeBefore(TEXT3, btn3ref, function () {
+        btn3ref.classList.remove('bio-trigger--cursor');
+        btn3ref.disabled = false;
+        busy = false;
+      });
+
+      btn3ref.addEventListener('click', function () { collapse(); });
+    });
   });
 }());
 </script>
