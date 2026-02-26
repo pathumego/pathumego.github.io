@@ -188,6 +188,17 @@ h1, h2, h3, h4 {
   margin-bottom: 2rem;
 }
 
+.bio {
+  margin-bottom: 1rem;
+}
+
+.bio-text {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
+  max-width: 72ch;
+}
+
 .txt {
   font-size: clamp(1.2rem, 3vw, 2rem);
   line-height: 1.5;

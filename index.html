@@ -6,14 +6,14 @@ hide_nav: true
 <div class="homepage">
   <div class="pe-text" id="pe-text">peපැபெ</div>
 
-  <p class="txt">
-    Pathum Egodawatta is an interdisciplinary designer,<br>
-    thinker, and catalyst working at the intersections of<br>
-    type, text, design, code, and culture. <button class="bio-trigger" id="bio-t1" aria-label="Read more">෴</button>
-  </p>
-
-  <p class="txt-2" id="bio-p2" style="display:none"></p>
-  <p class="hero-txt" id="bio-p3" style="display:none"></p>
+  <div class="bio">
+    <p class="bio-text">
+      Pathum Egodawatta is an interdisciplinary designer,<br>
+      thinker, and catalyst working at the intersections of<br>
+      type, text, design, code, and culture. <button class="bio-trigger" id="bio-toggle" aria-expanded="false">෴</button>
+    </p>
+    <div class="bio-more" id="bio-more" style="display:none"></div>
+  </div>
 
   <nav class="category-nav" id="bio-nav" style="display:none">
     <a href="/work" class="category-nav__link">View all work →</a>
@@ -78,72 +78,72 @@ hide_nav: true
   tick();
 }());
 
-/* --- Bio progressive typing reveal --------------------- */
+/* --- Bio typing reveal + collapse toggle ---------------- */
 (function () {
-  var SPEED = 12; // ms per character
+  var SPEED = 12;
 
   var TEXT2 = 'Pathum specializes in Sinhala and Tamil script typography and South Asian visual cultures. Based in Colombo, Sri Lanka, his practice sits at the intersection of culture and technology, spanning typography, typeface design, archival research, language technology, and community building. ';
-
   var TEXT3 = 'He is co-founder and Managing Partner of Mooniak, a type foundry and typographic design studio pioneering Sinhala + Tamil multi-script fonts and maintaining a large collection of Free and Open Source font projects. He co-founded Akuru Collective, a community that led over 30 events including three major international typography conferences in Sri Lanka. He currently serves as the Chief Curator of the W A Silva Museum for Language, Literature and Typography in Colombo, working to preserve and make accessible Sri Lanka\u2019s language and typographic heritage. He teaches typography, talks about design and ponders about future of civilisation. ';
 
-  /* Type text character by character into el, call onDone when finished */
+  var toggle = document.getElementById('bio-toggle');
+  var more   = document.getElementById('bio-more');
+  var nav    = document.getElementById('bio-nav');
+
+  var typed = false;
+  var open  = false;
+  var busy  = false;
+
   function typeInto(el, text, onDone) {
     var node = document.createTextNode('');
     el.appendChild(node);
     var i = 0;
     var timer = setInterval(function () {
       node.nodeValue += text[i++];
-      if (i >= text.length) {
-        clearInterval(timer);
-        if (onDone) onDone();
-      }
+      if (i >= text.length) { clearInterval(timer); if (onDone) onDone(); }
     }, SPEED);
   }
 
-  /* Create a clickable ෴ trigger button */
-  function makeTrigger(label) {
-    var btn = document.createElement('button');
-    btn.className = 'bio-trigger';
-    btn.textContent = '෴';
-    btn.setAttribute('aria-label', label);
-    return btn;
-  }
-
-  var t1  = document.getElementById('bio-t1');
-  var p2  = document.getElementById('bio-p2');
-  var p3  = document.getElementById('bio-p3');
-  var nav = document.getElementById('bio-nav');
-
-  /* --- Trigger 1: reveal block 2 --- */
-  t1.addEventListener('click', function () {
-    t1.classList.add('bio-trigger--used');
-    t1.disabled = true;
-
-    p2.style.display = 'block';
-
+  function typeAll(onDone) {
+    var p2 = document.createElement('p');
+    p2.className = 'bio-text';
+    more.appendChild(p2);
     typeInto(p2, TEXT2, function () {
-      /* After block 2 finishes, append ෴ to trigger block 3 */
-      var t2 = makeTrigger('Read more');
-      p2.appendChild(t2);
-
-      /* --- Trigger 2: reveal block 3 --- */
-      t2.addEventListener('click', function () {
-        t2.classList.add('bio-trigger--used');
-        t2.disabled = true;
-
-        p3.style.display = 'block';
-
-        typeInto(p3, TEXT3, function () {
-          /* After block 3 finishes, append decorative ෴ + show nav */
-          var mark = document.createElement('span');
-          mark.className = 'bio-kundaliya';
-          mark.textContent = '෴';
-          p3.appendChild(mark);
-
-          nav.style.display = '';
-        });
+      var p3 = document.createElement('p');
+      p3.className = 'bio-text';
+      more.appendChild(p3);
+      typeInto(p3, TEXT3, function () {
+        var mark = document.createElement('span');
+        mark.className = 'bio-kundaliya';
+        mark.textContent = ' \u0dba\u0dba\u0dba';
+        p3.appendChild(mark);
+        if (onDone) onDone();
       });
     });
+  }
+
+  toggle.addEventListener('click', function () {
+    if (busy) return;
+
+    if (open) {
+      open = false;
+      toggle.setAttribute('aria-expanded', 'false');
+      more.style.display = 'none';
+      nav.style.display  = 'none';
+    } else {
+      open = true;
+      toggle.setAttribute('aria-expanded', 'true');
+      more.style.display = '';
+      if (!typed) {
+        busy = true;
+        typeAll(function () {
+          typed = true;
+          busy  = false;
+          nav.style.display = '';
+        });
+      } else {
+        nav.style.display = '';
+      }
+    }
   });
 }());
 </script>
