@@ -4,17 +4,24 @@ layout: default
 
 {% assign all_projects = site.projects | sort: "date" | reverse %}
 {% assign subcategories = all_projects | map: "subcategory" | uniq | sort %}
-{% assign work_types    = all_projects | map: "type"        | uniq | sort %}
+{% assign work_types    = all_projects | map: "type"        | flatten | uniq | sort %}
 
 <div class="category-page">
 
   <div class="category-header">
     <div class="category-header__inner">
-      <h1 class="category-header__title">{{ page.title | default: "Work" }}</h1>
+      <h1 class="category-header__title">
+        {{ page.title | default: "Work" }}</h1>
       <div class="category-filters">
 
         <div class="filter-row">
-          <span class="filter-row__label">Category</span>
+                    <p>This is meant to be a complte archive of all work that I did and I will do in the future.
+                      Work in the wide sense encompassing projects, experiments, writings, talks, collaborations, and more across all domains and disciplines.
+                      The filters are provided to navigate through the archive and find specific subsets of work based on different
+                      intersections of my identity, the type and context of work, and the epoch in which it was done. The archive is a work in progress and will be updated as I continue to create and document my work.</p>
+                      As of today, it contains {{ all_projects | size }} items spanning from 2004 to the present, and will continue to grow as I add more past work and new work in the future.
+                    </p>
+<span class="filter-row__label">Pathum Egodawatta;</span>
           <div class="filter-pills">
             <button class="filter-pill active" data-filter="all"      data-group="category">All</button>
             <button class="filter-pill"        data-filter="designer" data-group="category">Designer</button>
@@ -41,7 +48,31 @@ layout: default
             <button class="filter-pill" data-filter="{{ t }}" data-group="type">{{ t | replace: "-", " " | capitalize }}</button>
             {% endif %}{% endfor %}
           </div>
+        </div>
+
+        <div class="filter-row">
+          <span class="filter-row__label">Epoch</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all"          data-group="epoch">All</button>
+            <button class="filter-pill"        data-filter="teenage"      data-group="epoch">Teenage 2004–10</button>
+            <button class="filter-pill"        data-filter="early-youth"  data-group="epoch">Early Youth 2011–24</button>
+            <button class="filter-pill"        data-filter="current"      data-group="epoch">Current 2025–</button>
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <span class="filter-row__label">Status</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all"       data-group="status">All</button>
+            <button class="filter-pill"        data-filter="ongoing"   data-group="status">Ongoing</button>
+            <button class="filter-pill"        data-filter="completed" data-group="status">Completed</button>
+          </div>
           <span class="project-count"><span id="visible-count">{{ all_projects | size }}</span> projects</span>
+          <div class="view-toggle">
+            <button class="view-btn" id="sort-btn" title="Sort by date">↓ Newest</button>
+            <button class="view-btn view-btn--active" data-view="grid" title="Thumbnail view">Grid</button>
+            <button class="view-btn" data-view="list" title="Text view">List</button>
+          </div>
         </div>
 
       </div>
@@ -51,10 +82,17 @@ layout: default
   <div class="projects-list-wrap">
     <div class="projects-grid" id="projects-list">
       {% for project in all_projects %}
+      {% assign proj_year = project.date | date: "%Y" | plus: 0 %}
+      {% if proj_year <= 2010 %}{% assign proj_epoch = "teenage" %}
+      {% elsif proj_year <= 2024 %}{% assign proj_epoch = "early-youth" %}
+      {% else %}{% assign proj_epoch = "current" %}{% endif %}
       <article class="grid-card"
         data-category="{{ project.category }}"
         data-subcat="{{ project.subcategory }}"
-        data-type="{{ project.type }}">
+        data-type="{{ project.type | join: ' ' }}"
+        data-epoch="{{ proj_epoch }}"
+        data-status="{{ project.status }}"
+        data-year="{{ project.date | date: '%Y' }}">
         <div class="grid-card__thumb">
           <a href="{{ project.url }}">
             {% if project.thumbnail %}
@@ -65,11 +103,16 @@ layout: default
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="{{ project.url }}" class="grid-card__title">{{ project.title }}</a>
+          <div class="grid-card__title-row">
+            <a href="{{ project.url }}" class="grid-card__title">{{ project.title }}</a>
+            {% if project.link %}<a href="{{ project.link }}" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>{% endif %}
+          </div>
           <div class="grid-card__meta">
-            <span>{{ project.category | capitalize }}</span>
+            {% if project.subcategory %}<span>{{ project.subcategory | replace: "-", " " | capitalize }}</span>{% endif %}
+            {% if project.where %}<span class="grid-card__where">{{ project.where }}</span>{% endif %}
             <span>{{ project.date | date: "%Y" }}{% if project.end_date %}–{{ project.end_date | date: "%Y" }}{% endif %}</span>
           </div>
+          {% if project.description %}<p class="grid-card__desc">{{ project.description }}</p>{% endif %}
         </div>
       </article>
       {% endfor %}
@@ -80,16 +123,19 @@ layout: default
 
 <script>
 (function () {
-  var cards = Array.from(document.querySelectorAll('.grid-card'));
-  var countEl = document.getElementById('visible-count');
-  var active = { category: 'all', subcat: 'all', type: 'all' };
+  var container = document.getElementById('projects-list');
+  var cards     = Array.from(container.querySelectorAll('.grid-card'));
+  var countEl   = document.getElementById('visible-count');
+  var active    = { category: 'all', subcat: 'all', type: 'all', epoch: 'all', status: 'all' };
 
   function applyFilters() {
     var n = 0;
     cards.forEach(function (c) {
       var show = (active.category === 'all' || c.dataset.category === active.category)
               && (active.subcat   === 'all' || c.dataset.subcat    === active.subcat)
-              && (active.type     === 'all' || c.dataset.type      === active.type);
+              && (active.type     === 'all' || c.dataset.type.split(/\s+/).includes(active.type))
+              && (active.epoch    === 'all' || c.dataset.epoch     === active.epoch)
+              && (active.status   === 'all' || c.dataset.status    === active.status);
       c.style.display = show ? '' : 'none';
       if (show) n++;
     });
@@ -103,6 +149,30 @@ layout: default
       pill.classList.add('active');
       active[group] = pill.dataset.filter;
       applyFilters();
+    });
+  });
+
+  /* Sort toggle */
+  var sortAsc = false;
+  var sortBtn = document.getElementById('sort-btn');
+  sortBtn.addEventListener('click', function () {
+    sortAsc = !sortAsc;
+    sortBtn.textContent = sortAsc ? '↑ Oldest' : '↓ Newest';
+    sortBtn.classList.toggle('view-btn--active', sortAsc);
+    cards.sort(function (a, b) {
+      var ya = parseInt(a.dataset.year) || 0;
+      var yb = parseInt(b.dataset.year) || 0;
+      return sortAsc ? ya - yb : yb - ya;
+    });
+    cards.forEach(function (c) { container.appendChild(c); });
+  });
+
+  /* View toggle */
+  document.querySelectorAll('.view-btn[data-view]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.view-btn[data-view]').forEach(function (b) { b.classList.remove('view-btn--active'); });
+      btn.classList.add('view-btn--active');
+      container.classList.toggle('view-list', btn.dataset.view === 'list');
     });
   });
 }());

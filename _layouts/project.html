@@ -62,6 +62,29 @@ layout: default
     {{ content }}
   </div>
 
+  {% assign proj_dir = page.path | remove: "index.md" | prepend: "/" %}
+  {% assign images_prefix = proj_dir | append: "images/" %}
+  {% assign folder_images = site.static_files | where_exp: "f", "f.path contains images_prefix" %}
+  {% if folder_images.size > 0 %}
+  <div class="project-detail__carousel">
+    <div class="carousel" id="proj-carousel" tabindex="0">
+      <div class="carousel__track" id="carousel-track">
+        {% for f in folder_images %}
+        {% assign ext = f.extname | downcase %}
+        {% if ext == ".jpg" or ext == ".jpeg" or ext == ".png" or ext == ".gif" or ext == ".webp" or ext == ".avif" %}
+        <div class="carousel__slide">
+          <img src="{{ page.url }}images/{{ f.name }}" alt="{{ page.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <button class="carousel__btn carousel__btn--prev" aria-label="Previous image">←</button>
+      <button class="carousel__btn carousel__btn--next" aria-label="Next image">→</button>
+      <div class="carousel__counter"><span id="carousel-cur">1</span> / <span id="carousel-tot"></span></div>
+    </div>
+  </div>
+  {% endif %}
+
   {% if page.images and page.images.size > 0 %}
   <div class="project-detail__gallery">
     <p class="gallery-heading">Images</p>
@@ -93,3 +116,41 @@ layout: default
     <a href="/work" class="project-detail__back">← All work</a>
   </div>
 </div>
+
+<script>
+(function () {
+  var el = document.getElementById('proj-carousel');
+  if (!el) return;
+  var track  = el.querySelector('.carousel__track');
+  var slides = Array.from(el.querySelectorAll('.carousel__slide'));
+  var n = slides.length;
+  if (n === 0) { el.parentElement.style.display = 'none'; return; }
+
+  var curEl  = document.getElementById('carousel-cur');
+  var totEl  = document.getElementById('carousel-tot');
+  var btnPrev = el.querySelector('.carousel__btn--prev');
+  var btnNext = el.querySelector('.carousel__btn--next');
+
+  if (totEl) totEl.textContent = n;
+  if (n === 1) {
+    if (btnPrev) btnPrev.style.display = 'none';
+    if (btnNext) btnNext.style.display = 'none';
+    el.querySelector('.carousel__counter').style.display = 'none';
+  }
+
+  var idx = 0;
+  function go(i) {
+    idx = ((i % n) + n) % n;
+    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    if (curEl) curEl.textContent = idx + 1;
+  }
+
+  if (btnPrev) btnPrev.addEventListener('click', function () { go(idx - 1); });
+  if (btnNext) btnNext.addEventListener('click', function () { go(idx + 1); });
+
+  el.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft')  { go(idx - 1); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { go(idx + 1); e.preventDefault(); }
+  });
+}());
+</script>

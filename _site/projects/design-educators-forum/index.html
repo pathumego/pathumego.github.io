@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Typography Educators Forum — Pathum Egodawatta</title>
-  <meta name="description" content="Forum for design educators to develop and share techniques for teaching typography." />
+  <meta name="description" content="Conceptualised and orgnised a forum for design educators to develop and share techniques for teaching typography." />
 
   <link rel="icon" href="/assets/images/favicon.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
@@ -26,14 +26,14 @@
   <meta property="og:url" content="https://pathumego.com/projects/design-educators-forum/" />
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Pathum Egodawatta" />
-  <meta property="og:description" content="Forum for design educators to develop and share techniques for teaching typography." />
+  <meta property="og:description" content="Conceptualised and orgnised a forum for design educators to develop and share techniques for teaching typography." />
   
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Typography Educators Forum — Pathum Egodawatta" />
   <meta name="twitter:url" content="https://pathumego.com/projects/design-educators-forum/" />
-  <meta name="twitter:description" content="Forum for design educators to develop and share techniques for teaching typography." />
+  <meta name="twitter:description" content="Conceptualised and orgnised a forum for design educators to develop and share techniques for teaching typography." />
   
 
   <link rel="canonical" href="https://pathumego.com/projects/design-educators-forum/">
@@ -46,7 +46,7 @@
   <div class="site-nav__inner">
     <a href="/" class="site-nav__title">Pathum Egodawatta</a>
     <ul class="site-nav__links">
-      <li><a href="/work" >Work</a></li>
+      <!-- <li><a href="/work" >Work</a></li> -->
     </ul>
   </div>
 </nav>
@@ -68,13 +68,13 @@
     <h1 class="project-detail__title">Typography Educators Forum</h1>
 
     
-    <p class="project-detail__lead">Forum for design educators to develop and share techniques for teaching typography.</p>
+    <p class="project-detail__lead">Conceptualised and orgnised a forum for design educators to develop and share techniques for teaching typography.</p>
     
 
     <div class="project-detail__meta">
       <div class="meta-item">
         <span class="meta-label">Year</span>
-        <span class="meta-value">2019</span>
+        <span class="meta-value">2017</span>
       </div>
       
       <div class="meta-item">
@@ -120,6 +120,11 @@
   </div>
 
   
+  
+  
+  
+
+  
 
   
   <div class="project-detail__tags">
@@ -134,6 +139,44 @@
     <a href="/work" class="project-detail__back">← All work</a>
   </div>
 </div>
+
+<script>
+(function () {
+  var el = document.getElementById('proj-carousel');
+  if (!el) return;
+  var track  = el.querySelector('.carousel__track');
+  var slides = Array.from(el.querySelectorAll('.carousel__slide'));
+  var n = slides.length;
+  if (n === 0) { el.parentElement.style.display = 'none'; return; }
+
+  var curEl  = document.getElementById('carousel-cur');
+  var totEl  = document.getElementById('carousel-tot');
+  var btnPrev = el.querySelector('.carousel__btn--prev');
+  var btnNext = el.querySelector('.carousel__btn--next');
+
+  if (totEl) totEl.textContent = n;
+  if (n === 1) {
+    if (btnPrev) btnPrev.style.display = 'none';
+    if (btnNext) btnNext.style.display = 'none';
+    el.querySelector('.carousel__counter').style.display = 'none';
+  }
+
+  var idx = 0;
+  function go(i) {
+    idx = ((i % n) + n) % n;
+    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    if (curEl) curEl.textContent = idx + 1;
+  }
+
+  if (btnPrev) btnPrev.addEventListener('click', function () { go(idx - 1); });
+  if (btnNext) btnNext.addEventListener('click', function () { go(idx + 1); });
+
+  el.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft')  { go(idx - 1); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { go(idx + 1); e.preventDefault(); }
+  });
+}());
+</script>
 
   </main>
   <footer class="site-footer">

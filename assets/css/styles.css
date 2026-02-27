@@ -193,7 +193,7 @@ h1, h2, h3, h4 {
 }
 
 .bio-text {
-  font-size: clamp(1rem, 1.8vw, 1.8rem);
+  font-size: clamp(1rem, 2.3vw, 3.8rem);
   line-height: 1.7;
   margin: 0 0 0.75rem;
   max-width: 72ch;
@@ -324,6 +324,7 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  position: relative; /* desc overlay anchors here */
 }
 
 .grid-card__thumb {
@@ -331,6 +332,108 @@ h1, h2, h3, h4 {
   aspect-ratio: 3 / 2;
   overflow: hidden;
   background: var(--surface);
+}
+
+/* Grid view: desc overlays the whole card on hover */
+.grid-card__desc {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  padding: 0.9rem 1rem;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.18s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.grid-card:hover .grid-card__desc {
+  opacity: 1;
+}
+
+/* ---- List view ------------------------------------------ */
+.projects-grid.view-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.view-list .grid-card {
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--border);
+  gap: 0;
+}
+
+/* Thumb: hidden by default, floats right on hover */
+.view-list .grid-card__thumb {
+  position: absolute;
+  right: 0;
+  top: 0.85rem;
+  width: 200px;
+  aspect-ratio: 3 / 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+
+.view-list .grid-card:hover .grid-card__thumb {
+  opacity: 1;
+}
+
+/* Info takes full width */
+.view-list .grid-card__info {
+  flex: 1;
+  gap: 0.35rem;
+}
+
+/* Desc: visible inline below meta */
+.view-list .grid-card__desc {
+  position: static;
+  background: none;
+  color: var(--muted);
+  opacity: 1;
+  pointer-events: auto;
+  padding: 0;
+  transition: none;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  display: block;
+  z-index: auto;
+}
+
+.view-list .grid-card:hover .grid-card__desc {
+  opacity: 1; /* override: always visible in list mode */
+}
+
+/* View toggle buttons */
+.view-toggle {
+  display: flex;
+  gap: 0.3rem;
+  margin-left: auto;
+}
+
+.view-btn {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  color: var(--muted);
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.view-btn:hover,
+.view-btn--active {
+  border-color: var(--fg);
+  color: var(--fg);
 }
 
 .grid-card__thumb a {
@@ -372,6 +475,13 @@ h1, h2, h3, h4 {
   gap: 0.2rem;
 }
 
+.grid-card__title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.3rem;
+}
+
 .grid-card__title {
   font-size: 0.88rem;
   font-weight: 600;
@@ -383,11 +493,28 @@ h1, h2, h3, h4 {
   text-decoration: underline;
 }
 
+.grid-card__ext {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.grid-card__ext:hover {
+  color: var(--fg);
+}
+
 .grid-card__meta {
   font-size: 0.72rem;
   color: var(--muted);
   display: flex;
-  gap: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+}
+
+.grid-card__where {
+  font-style: italic;
 }
 
 /* --- Work page ------------------------------------------ */
@@ -644,6 +771,69 @@ h1, h2, h3, h4 {
   font-size: 0.72rem;
   color: var(--subtle);
   margin-top: 0.4rem;
+}
+
+/* ── Carousel ─────────────────────────────────────────────── */
+.project-detail__carousel {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  user-select: none;
+  background: var(--surface, #f4f4f4);
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.carousel__slide img {
+  width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s;
+  z-index: 1;
+}
+
+.carousel__btn:hover { background: rgba(0, 0, 0, 0.75); }
+.carousel__btn--prev { left: 0; }
+.carousel__btn--next { right: 0; }
+
+.carousel__counter {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.75rem;
+  font-size: 0.7rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  pointer-events: none;
 }
 
 .project-detail__tags {

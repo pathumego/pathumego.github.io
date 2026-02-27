@@ -28,11 +28,16 @@ hide_nav: true
         </a>
       </div>
       <div class="grid-card__info">
-        <a href="{{ project.url }}" class="grid-card__title">{{ project.title }}</a>
+        <div class="grid-card__title-row">
+          <a href="{{ project.url }}" class="grid-card__title">{{ project.title }}</a>
+          {% if project.link %}<a href="{{ project.link }}" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>{% endif %}
+        </div>
         <div class="grid-card__meta">
-          <span>{{ project.category | capitalize }}</span>
+          {% if project.subcategory %}<span>{{ project.subcategory | replace: "-", " " | capitalize }}</span>{% endif %}
+          {% if project.where %}<span class="grid-card__where">{{ project.where }}</span>{% endif %}
           <span>{{ project.date | date: "%Y" }}{% if project.end_date %}–{{ project.end_date | date: "%Y" }}{% endif %}</span>
         </div>
+        {% if project.description %}<p class="grid-card__desc">{{ project.description }}</p>{% endif %}
       </div>
     </article>
     {% endfor %}

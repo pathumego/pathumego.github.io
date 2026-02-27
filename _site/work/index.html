@@ -46,7 +46,7 @@
   <div class="site-nav__inner">
     <a href="/" class="site-nav__title">Pathum Egodawatta</a>
     <ul class="site-nav__links">
-      <li><a href="/work" class="active">Work</a></li>
+      <!-- <li><a href="/work" class="active">Work</a></li> -->
     </ul>
   </div>
 </nav>
@@ -61,11 +61,18 @@
 
   <div class="category-header">
     <div class="category-header__inner">
-      <h1 class="category-header__title">All projects and work</h1>
+      <h1 class="category-header__title">
+        All projects and work</h1>
       <div class="category-filters">
 
         <div class="filter-row">
-          <span class="filter-row__label">Category</span>
+                    <p>This is meant to be a complte archive of all work that I did and I will do in the future.
+                      Work in the wide sense encompassing projects, experiments, writings, talks, collaborations, and more across all domains and disciplines.
+                      The filters are provided to navigate through the archive and find specific subsets of work based on different
+                      intersections of my identity, the type and context of work, and the epoch in which it was done. The archive is a work in progress and will be updated as I continue to create and document my work.</p>
+                      As of today, it contains 35 items spanning from 2004 to the present, and will continue to grow as I add more past work and new work in the future.
+                    </p>
+<span class="filter-row__label">Pathum Egodawatta;</span>
           <div class="filter-pills">
             <button class="filter-pill active" data-filter="all"      data-group="category">All</button>
             <button class="filter-pill"        data-filter="designer" data-group="category">Designer</button>
@@ -87,17 +94,23 @@
             
             <button class="filter-pill" data-filter="curation" data-group="subcat">Curation</button>
             
+            <button class="filter-pill" data-filter="designer" data-group="subcat">Designer</button>
+            
             <button class="filter-pill" data-filter="education" data-group="subcat">Education</button>
             
             <button class="filter-pill" data-filter="font-engineering" data-group="subcat">Font engineering</button>
             
             <button class="filter-pill" data-filter="heritage" data-group="subcat">Heritage</button>
             
+            <button class="filter-pill" data-filter="media production" data-group="subcat">Media production</button>
+            
             <button class="filter-pill" data-filter="research" data-group="subcat">Research</button>
             
             <button class="filter-pill" data-filter="talk" data-group="subcat">Talk</button>
             
             <button class="filter-pill" data-filter="typeface-design" data-group="subcat">Typeface design</button>
+            
+            <button class="filter-pill" data-filter="ventures" data-group="subcat">Ventures</button>
             
             <button class="filter-pill" data-filter="workshop" data-group="subcat">Workshop</button>
             
@@ -111,16 +124,52 @@
             
             <button class="filter-pill" data-filter="academic" data-group="type">Academic</button>
             
+            <button class="filter-pill" data-filter="bussiness" data-group="type">Bussiness</button>
+            
             <button class="filter-pill" data-filter="client-work" data-group="type">Client work</button>
             
             <button class="filter-pill" data-filter="community" data-group="type">Community</button>
+            
+            <button class="filter-pill" data-filter="conference" data-group="type">Conference</button>
+            
+            <button class="filter-pill" data-filter="design" data-group="type">Design</button>
+            
+            <button class="filter-pill" data-filter="festival" data-group="type">Festival</button>
+            
+            <button class="filter-pill" data-filter="heritage" data-group="type">Heritage</button>
             
             <button class="filter-pill" data-filter="open-source" data-group="type">Open source</button>
             
             <button class="filter-pill" data-filter="personal" data-group="type">Personal</button>
             
+            <button class="filter-pill" data-filter="writing" data-group="type">Writing</button>
+            
           </div>
-          <span class="project-count"><span id="visible-count">30</span> projects</span>
+        </div>
+
+        <div class="filter-row">
+          <span class="filter-row__label">Epoch</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all"          data-group="epoch">All</button>
+            <button class="filter-pill"        data-filter="teenage"      data-group="epoch">Teenage 2004–10</button>
+            <button class="filter-pill"        data-filter="early-youth"  data-group="epoch">Early Youth 2011–24</button>
+            <button class="filter-pill"        data-filter="current"      data-group="epoch">Current 2025–</button>
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <span class="filter-row__label">Status</span>
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all"       data-group="status">All</button>
+            <button class="filter-pill"        data-filter="ongoing"   data-group="status">Ongoing</button>
+            <button class="filter-pill"        data-filter="completed" data-group="status">Completed</button>
+          </div>
+          <span class="project-count"><span id="visible-count">35</span> projects</span>
+          <div class="view-toggle">
+            <button class="view-btn" id="sort-btn" title="Sort by date">↓ Newest</button>
+            <button class="view-btn view-btn--active" data-view="grid" title="Thumbnail view">Grid</button>
+            <button class="view-btn" data-view="list" title="Text view">List</button>
+          </div>
         </div>
 
       </div>
@@ -130,10 +179,15 @@
   <div class="projects-list-wrap">
     <div class="projects-grid" id="projects-list">
       
+      
+      
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="workshop"
-        data-type="community">
+        data-type="community"
+        data-epoch="current"
+        data-status="completed"
+        data-year="2026">
         <div class="grid-card__thumb">
           <a href="/projects/poster-workshop-kalpitiya/">
             
@@ -142,18 +196,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/poster-workshop-kalpitiya/" class="grid-card__title">Poster Workshop Kalipitya</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/poster-workshop-kalpitiya/" class="grid-card__title">Poster Workshop Kalipitya</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Workshop</span>
+            
             <span>2026</span>
           </div>
+          <p class="grid-card__desc">Workshop on type design in Singapore as part of the Crafting Type workshop series.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="talk"
-        data-type="personal">
+        data-type="personal"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2023">
         <div class="grid-card__thumb">
           <a href="/projects/fonts-bankrupt-country/">
             
@@ -162,18 +226,58 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/fonts-bankrupt-country/" class="grid-card__title">How to Build a Fonts Industry in a Bankrupt Country?</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/fonts-bankrupt-country/" class="grid-card__title">How to Build a Fonts Industry in a Bankrupt Country?</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Talk</span>
+            
             <span>2023</span>
           </div>
+          <p class="grid-card__desc">Talk at Sri Lanka Design Festival on building a sustainable fonts industry in Sri Lanka.</p>
         </div>
       </article>
+      
+      
+      
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="community"
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2022">
+        <div class="grid-card__thumb">
+          <a href="/projects/designact/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">COMM</span>
+            
+          </a>
+        </div>
+        <div class="grid-card__info">
+          <div class="grid-card__title-row">
+            <a href="/projects/designact/" class="grid-card__title">Cofounding DesignAct</a>
+            
+          </div>
+          <div class="grid-card__meta">
+            <span>Community</span>
+            
+            <span>2022–2025</span>
+          </div>
+          <p class="grid-card__desc">Was a founding member of the DesignAct community in Sri Lanka.</p>
+        </div>
+      </article>
+      
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="curation"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="ongoing"
+        data-year="2020">
         <div class="grid-card__thumb">
           <a href="/projects/wa-silva-museum/">
             
@@ -182,18 +286,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/wa-silva-museum/" class="grid-card__title">W A Silva Museum for Language, Literature and Typography</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/wa-silva-museum/" class="grid-card__title">W A Silva Museum for Language, Literature and Typography</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Curation</span>
+            
             <span>2020–2099</span>
           </div>
+          <p class="grid-card__desc">Chief Curator of the W A Silva Museum — preserving Sri Lanka's language and typographic heritage.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="curation"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="ongoing"
+        data-year="2020">
         <div class="grid-card__thumb">
           <a href="/projects/institute-of-typography/">
             
@@ -202,18 +316,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/institute-of-typography/" class="grid-card__title">Institute of Typography — Sri Lanka</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/institute-of-typography/" class="grid-card__title">Institute of Typography — Sri Lanka</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Curation</span>
+            
             <span>2020–2099</span>
           </div>
+          <p class="grid-card__desc">Director of the Institute of Typography — Sri Lanka, overseeing the W A Silva Museum.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="heritage"
-        data-type="open-source">
+        data-type="open-source"
+        data-epoch="early-youth"
+        data-status="ongoing"
+        data-year="2020">
         <div class="grid-card__thumb">
           <a href="/projects/galle-font-project/">
             
@@ -222,18 +346,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/galle-font-project/" class="grid-card__title">Galle Font Project</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/galle-font-project/" class="grid-card__title">Galle Font Project</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Heritage</span>
+            
             <span>2020</span>
           </div>
+          <p class="grid-card__desc">Digital revival of Sinhala letterforms from the 18th-century Dutch Press in Ceylon.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="workshop"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2020">
         <div class="grid-card__thumb">
           <a href="/projects/crafting-type-singapore/">
             
@@ -242,38 +376,58 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/crafting-type-singapore/" class="grid-card__title">Crafting Type Singapore 2020</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/crafting-type-singapore/" class="grid-card__title">Crafting Type Singapore 2020</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Workshop</span>
+            
             <span>2020</span>
           </div>
+          <p class="grid-card__desc">Workshop on type design in Singapore as part of the Crafting Type workshop series.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="conference"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2019">
         <div class="grid-card__thumb">
-          <a href="/projects/atypi-working-seminars/">
+          <a href="/projects/atypi-working-seminars-2019/">
             
             <span class="grid-card__placeholder grid-card__placeholder--catalyst">CONF</span>
             
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/atypi-working-seminars/" class="grid-card__title">ATypI Working Seminars Colombo 2019</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/atypi-working-seminars-2019/" class="grid-card__title">ATypI Working Seminars Colombo 2019</a>
+            <a href="https://workingseminars.atypi.org/working-seminar-colombo/" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Conference</span>
+            
             <span>2019–2019</span>
           </div>
+          <p class="grid-card__desc">ATypI's first Working Seminar in 27 years — hosted in Colombo with a focus on teaching typography.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="workshop"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2019">
         <div class="grid-card__thumb">
           <a href="/projects/typography-childrens-literature/">
             
@@ -282,18 +436,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/typography-childrens-literature/" class="grid-card__title">Typography for Children's Literature Workshop</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/typography-childrens-literature/" class="grid-card__title">Typography for Children's Literature Workshop</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Workshop</span>
+            
             <span>2019</span>
           </div>
+          <p class="grid-card__desc">Workshop on typography for Sinhala children's book design, organised by IBBY Sri Lanka.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="talk"
-        data-type="personal">
+        data-type="personal"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2019">
         <div class="grid-card__thumb">
           <a href="/projects/south-asian-typography-talk/">
             
@@ -302,58 +466,58 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/south-asian-typography-talk/" class="grid-card__title">South Asian Typography and Understanding Design Colonization</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/south-asian-typography-talk/" class="grid-card__title">South Asian Typography and Understanding Design Colonization</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Talk</span>
+            
             <span>2019</span>
           </div>
+          <p class="grid-card__desc">A talk examining how colonial typographic conventions persist in South Asian design practice.</p>
         </div>
       </article>
       
+      
+      
       <article class="grid-card"
         data-category="catalyst"
-        data-subcat="heritage"
-        data-type="community">
+        data-subcat="curation"
+        data-type="heritage conference"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2019">
         <div class="grid-card__thumb">
           <a href="/projects/dutch-ceylon-heritage/">
             
-            <span class="grid-card__placeholder grid-card__placeholder--catalyst">HERI</span>
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">CURA</span>
             
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/dutch-ceylon-heritage/" class="grid-card__title">Dutch–Ceylon Typographic Heritage Project</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/dutch-ceylon-heritage/" class="grid-card__title">Akurucon 2018; Dutch–Ceylon Typographic Heritage Project</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Curation</span>
+            
             <span>2019</span>
           </div>
+          <p class="grid-card__desc">Knowledge exchange exploring shared typographic heritage between Sri Lanka and the Netherlands.</p>
         </div>
       </article>
       
-      <article class="grid-card"
-        data-category="catalyst"
-        data-subcat="education"
-        data-type="community">
-        <div class="grid-card__thumb">
-          <a href="/projects/design-educators-forum/">
-            
-            <span class="grid-card__placeholder grid-card__placeholder--catalyst">EDUC</span>
-            
-          </a>
-        </div>
-        <div class="grid-card__info">
-          <a href="/projects/design-educators-forum/" class="grid-card__title">Typography Educators Forum</a>
-          <div class="grid-card__meta">
-            <span>Catalyst</span>
-            <span>2019</span>
-          </div>
-        </div>
-      </article>
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="conference"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2018">
         <div class="grid-card__thumb">
           <a href="/projects/akurucon-2018/">
             
@@ -362,38 +526,58 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/akurucon-2018/" class="grid-card__title">AkuruCon 2018</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/akurucon-2018/" class="grid-card__title">AkuruCon 2018</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Conference</span>
+            
             <span>2018</span>
           </div>
+          <p class="grid-card__desc">International typography conference celebrating 280 years of movable type in Sri Lanka.</p>
         </div>
       </article>
       
+      
+      
       <article class="grid-card"
         data-category="thinker"
-        data-subcat="research"
-        data-type="academic">
+        data-subcat="talk"
+        data-type="academic"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2017">
         <div class="grid-card__thumb">
           <a href="/projects/kundaliya-research/">
             
-            <span class="grid-card__placeholder grid-card__placeholder--thinker">RESE</span>
+            <span class="grid-card__placeholder grid-card__placeholder--thinker">TALK</span>
             
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/kundaliya-research/" class="grid-card__title">Kundaliya: The Disappearance of a Sinhala Punctuation</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/kundaliya-research/" class="grid-card__title">Kundaliya: The Disappearance of a Sinhala Punctuation</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Talk</span>
+            
             <span>2017</span>
           </div>
+          <p class="grid-card__desc">Research into the historical disappearance of Kundaliya — the traditional Sinhala paragraph mark.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="community"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2017">
         <div class="grid-card__thumb">
           <a href="/projects/colombo-type/">
             
@@ -402,18 +586,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/colombo-type/" class="grid-card__title">ColomboType</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/colombo-type/" class="grid-card__title">ColomboType</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Community</span>
+            
             <span>2017–2025</span>
           </div>
+          <p class="grid-card__desc">Regular typography community meetups in Colombo — a space for letterform enthusiasts.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="conference"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2017">
         <div class="grid-card__thumb">
           <a href="/projects/typoday-2017/">
             
@@ -422,18 +616,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/typoday-2017/" class="grid-card__title">Typoday 2017 — Colombo</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/typoday-2017/" class="grid-card__title">Typoday 2017 — Colombo</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Conference</span>
+            
             <span>2017–2017</span>
           </div>
+          <p class="grid-card__desc">International typography conference co-organised in Colombo, Sri Lanka — a founding moment for the Akuru Collective.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="research"
-        data-type="personal">
+        data-type="personal"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2017">
         <div class="grid-card__thumb">
           <a href="/projects/sinhala-digital-typography/">
             
@@ -442,18 +646,58 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/sinhala-digital-typography/" class="grid-card__title">State of Sinhala Digital Typography</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/sinhala-digital-typography/" class="grid-card__title">State of Sinhala Digital Typography</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Research</span>
+            
             <span>2017</span>
           </div>
+          <p class="grid-card__desc">A survey and assessment of the state of Sinhala typography on the web and in digital environments.</p>
         </div>
       </article>
+      
+      
+      
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="media production"
+        data-type="bussiness"
+        data-epoch="early-youth"
+        data-status="ongoing"
+        data-year="2017">
+        <div class="grid-card__thumb">
+          <a href="/projects/kolonbiya/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">MEDI</span>
+            
+          </a>
+        </div>
+        <div class="grid-card__info">
+          <div class="grid-card__title-row">
+            <a href="/projects/kolonbiya/" class="grid-card__title">Kolonbiya; Sinhala Darama Series</a>
+            
+          </div>
+          <div class="grid-card__meta">
+            <span>Media production</span>
+            
+            <span>2017–2025</span>
+          </div>
+          <p class="grid-card__desc">Cofounded and produced Kolonbiya, a popular Sinhala Youtube series in Sri Lanka</p>
+        </div>
+      </article>
+      
+      
       
       <article class="grid-card"
         data-category="catalyst"
         data-subcat="community"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2017">
         <div class="grid-card__thumb">
           <a href="/projects/akuru-collective/">
             
@@ -462,18 +706,58 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/akuru-collective/" class="grid-card__title">Akuru Collective</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/akuru-collective/" class="grid-card__title">Akuru Collective</a>
+            <a href="https://akuru.xyz" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>
+          </div>
           <div class="grid-card__meta">
-            <span>Catalyst</span>
+            <span>Community</span>
+            
             <span>2017–2025</span>
           </div>
+          <p class="grid-card__desc">Co-founder of Akuru Collective — Sri Lanka's typography community, 2017–2025.</p>
         </div>
       </article>
+      
+      
+      
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="education"
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2017">
+        <div class="grid-card__thumb">
+          <a href="/projects/design-educators-forum/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">EDUC</span>
+            
+          </a>
+        </div>
+        <div class="grid-card__info">
+          <div class="grid-card__title-row">
+            <a href="/projects/design-educators-forum/" class="grid-card__title">Typography Educators Forum</a>
+            
+          </div>
+          <div class="grid-card__meta">
+            <span>Education</span>
+            
+            <span>2017</span>
+          </div>
+          <p class="grid-card__desc">Conceptualised and orgnised a forum for design educators to develop and share techniques for teaching typography.</p>
+        </div>
+      </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="research"
-        data-type="academic">
+        data-type="academic"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2016">
         <div class="grid-card__thumb">
           <a href="/projects/sinhala-typography-19th-century/">
             
@@ -482,18 +766,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/sinhala-typography-19th-century/" class="grid-card__title">Milestones of Sinhala Typography in 19th Century Ceylon</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/sinhala-typography-19th-century/" class="grid-card__title">Milestones of Sinhala Typography in 19th Century Ceylon</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Research</span>
+            
             <span>2016</span>
           </div>
+          <p class="grid-card__desc">A historical survey of key developments in Sinhala typography during the 19th century.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="research"
-        data-type="academic">
+        data-type="academic"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2016">
         <div class="grid-card__thumb">
           <a href="/projects/ma-reading/">
             
@@ -502,18 +796,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/ma-reading/" class="grid-card__title">MA in Typeface Design — University of Reading</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/ma-reading/" class="grid-card__title">MA in Typeface Design — University of Reading</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Research</span>
+            
             <span>2016</span>
           </div>
+          <p class="grid-card__desc">MA in Typeface Design with Distinction, University of Reading, UK (2016).</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="article"
-        data-type="personal">
+        data-type="personal"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2016">
         <div class="grid-card__thumb">
           <a href="/projects/duality-of-language/">
             
@@ -522,18 +826,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/duality-of-language/" class="grid-card__title">The Duality of Language: Marking International Mother Language Day</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/duality-of-language/" class="grid-card__title">The Duality of Language: Marking International Mother Language Day</a>
+            <a href="http://groundviews.org/2016/02/19/the-duality-of-language-marking-international-mother-language-day/" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Article</span>
+            
             <span>2016</span>
           </div>
+          <p class="grid-card__desc">Essay marking International Mother Language Day, on the duality of linguistic identity in Sri Lanka.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="article"
-        data-type="personal">
+        data-type="personal"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2015">
         <div class="grid-card__thumb">
           <a href="/projects/finding-common-language/">
             
@@ -542,18 +856,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/finding-common-language/" class="grid-card__title">Finding a Common Language</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/finding-common-language/" class="grid-card__title">Finding a Common Language</a>
+            <a href="http://www.commarts.com/column/finding-common-language" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Article</span>
+            
             <span>2015</span>
           </div>
+          <p class="grid-card__desc">Reconciliation and revival through letterforms — published in Communication Arts.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="designer"
         data-subcat="typeface-design"
-        data-type="personal">
+        data-type="personal"
+        data-epoch="early-youth"
+        data-status="ongoing"
+        data-year="2015">
         <div class="grid-card__thumb">
           <a href="/projects/mooniak/">
             
@@ -562,18 +886,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/mooniak/" class="grid-card__title">Mooniak</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/mooniak/" class="grid-card__title">Mooniak</a>
+            <a href="https://mooniak.com" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>
+          </div>
           <div class="grid-card__meta">
-            <span>Designer</span>
+            <span>Typeface design</span>
+            
             <span>2015–2099</span>
           </div>
+          <p class="grid-card__desc">Co-founder and Managing Director of Sri Lanka's leading multilingual type foundry.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="talk"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2015">
         <div class="grid-card__thumb">
           <a href="/projects/lgm-talk-2016/">
             
@@ -582,18 +916,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/lgm-talk-2016/" class="grid-card__title">Indic text capabilities in Libre Graphics software</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/lgm-talk-2016/" class="grid-card__title">Indic text capabilities in Libre Graphics software</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Talk</span>
+            
             <span>2015–2016</span>
           </div>
+          <p class="grid-card__desc">Talks at Libre Graphics Meeting in Toronto (2015) and London (2016) on Indic text in free software. LGM 2016, London, UK</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="talk"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2015">
         <div class="grid-card__thumb">
           <a href="/projects/lgm-talk-2015/">
             
@@ -602,18 +946,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/lgm-talk-2015/" class="grid-card__title">Jumping into Libre Graphics @ Libre Graphics Meeting 2015</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/lgm-talk-2015/" class="grid-card__title">Jumping into Libre Graphics @ Libre Graphics Meeting 2015</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Talk</span>
+            
             <span>2015–2016</span>
           </div>
+          <p class="grid-card__desc">Talks at Libre Graphics Meeting in Toronto (2015) and London (2016) on Indic text in free software.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="article"
-        data-type="personal">
+        data-type="personal"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2015">
         <div class="grid-card__thumb">
           <a href="/projects/freeing-fonts/">
             
@@ -622,18 +976,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/freeing-fonts/" class="grid-card__title">Freeing Fonts</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/freeing-fonts/" class="grid-card__title">Freeing Fonts</a>
+            <a href="http://www.indipool.com/freeing-fonts/" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Article</span>
+            
             <span>2015</span>
           </div>
+          <p class="grid-card__desc">Article on the free and open-source font movement — published in Pool India.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="designer"
         data-subcat="font-engineering"
-        data-type="community">
+        data-type="community"
+        data-epoch="early-youth"
+        data-status="ongoing"
+        data-year="2014">
         <div class="grid-card__thumb">
           <a href="/projects/sinhala-encoding/">
             
@@ -642,18 +1006,28 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/sinhala-encoding/" class="grid-card__title">Sinhala Script Encoding Standards</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/sinhala-encoding/" class="grid-card__title">Sinhala Script Encoding Standards</a>
+            <a href="https://unicode.org" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>
+          </div>
           <div class="grid-card__meta">
-            <span>Designer</span>
+            <span>Font engineering</span>
+            
             <span>2014–2099</span>
           </div>
+          <p class="grid-card__desc">Contributions to Unicode and SLS1134 standards for Sinhala script encoding and text rendering.</p>
         </div>
       </article>
+      
+      
       
       <article class="grid-card"
         data-category="thinker"
         data-subcat="research"
-        data-type="academic">
+        data-type="academic"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2014">
         <div class="grid-card__thumb">
           <a href="/projects/political-conflict-typography/">
             
@@ -662,58 +1036,58 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/political-conflict-typography/" class="grid-card__title">A Typographic History of the Sri Lankan Political Conflict</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/political-conflict-typography/" class="grid-card__title">A Typographic History of the Sri Lankan Political Conflict</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Thinker</span>
+            <span>Research</span>
+            
             <span>2014</span>
           </div>
+          <p class="grid-card__desc">Examining how typography was used as a tool of political identity and conflict in Sri Lanka.</p>
         </div>
       </article>
       
+      
+      
       <article class="grid-card"
         data-category="designer"
-        data-subcat="font-engineering"
-        data-type="open-source">
+        data-subcat="designer"
+        data-type="festival"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2014">
         <div class="grid-card__thumb">
-          <a href="/projects/libre-fonts/">
+          <a href="/projects/no-more-july/">
             
-            <span class="grid-card__placeholder grid-card__placeholder--designer">FONT</span>
+            <span class="grid-card__placeholder grid-card__placeholder--designer">DESI</span>
             
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/libre-fonts/" class="grid-card__title">Free and Open Source Font Projects</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/no-more-july/" class="grid-card__title">No More July</a>
+            
+          </div>
           <div class="grid-card__meta">
             <span>Designer</span>
-            <span>2013–2099</span>
+            
+            <span>2014</span>
           </div>
+          <p class="grid-card__desc">Was the designer for No More July, a festival against extrimism in Sri Lanka.</p>
         </div>
       </article>
       
-      <article class="grid-card"
-        data-category="designer"
-        data-subcat="font-engineering"
-        data-type="client-work">
-        <div class="grid-card__thumb">
-          <a href="/projects/google-fonts-consultancy/">
-            
-            <span class="grid-card__placeholder grid-card__placeholder--designer">FONT</span>
-            
-          </a>
-        </div>
-        <div class="grid-card__info">
-          <a href="/projects/google-fonts-consultancy/" class="grid-card__title">Google Fonts Consultancy</a>
-          <div class="grid-card__meta">
-            <span>Designer</span>
-            <span>2013–2015</span>
-          </div>
-        </div>
-      </article>
+      
       
       <article class="grid-card"
         data-category="designer"
         data-subcat="typeface-design"
-        data-type="academic">
+        data-type="academic"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2013">
         <div class="grid-card__thumb">
           <a href="/projects/amma-typeface/">
             
@@ -722,11 +1096,136 @@
           </a>
         </div>
         <div class="grid-card__info">
-          <a href="/projects/amma-typeface/" class="grid-card__title">Amma — Hybrid Sinhala Tamil Typeface</a>
+          <div class="grid-card__title-row">
+            <a href="/projects/amma-typeface/" class="grid-card__title">Amma — Hybrid Sinhala Tamil Typeface</a>
+            
+          </div>
           <div class="grid-card__meta">
-            <span>Designer</span>
+            <span>Typeface design</span>
+            
             <span>2013</span>
           </div>
+          <p class="grid-card__desc">A graduation typeface project exploring the shared visual space between Sinhala and Tamil letterforms.</p>
+        </div>
+      </article>
+      
+      
+      
+      <article class="grid-card"
+        data-category="catalyst"
+        data-subcat="ventures"
+        data-type="bussiness"
+        data-epoch="early-youth"
+        data-status="ongoing"
+        data-year="2013">
+        <div class="grid-card__thumb">
+          <a href="/projects/scribble/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--catalyst">VENT</span>
+            
+          </a>
+        </div>
+        <div class="grid-card__info">
+          <div class="grid-card__title-row">
+            <a href="/projects/scribble/" class="grid-card__title">Scribble! A designer stastationary bussiness</a>
+            
+          </div>
+          <div class="grid-card__meta">
+            <span>Ventures</span>
+            
+            <span>2013–2025</span>
+          </div>
+          <p class="grid-card__desc">Cofounded Scribble! a designer stastationary bussiness in Sri Lanka</p>
+        </div>
+      </article>
+      
+      
+      
+      <article class="grid-card"
+        data-category="designer"
+        data-subcat="font-engineering"
+        data-type="open-source"
+        data-epoch="early-youth"
+        data-status="ongoing"
+        data-year="2013">
+        <div class="grid-card__thumb">
+          <a href="/projects/libre-fonts/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--designer">FONT</span>
+            
+          </a>
+        </div>
+        <div class="grid-card__info">
+          <div class="grid-card__title-row">
+            <a href="/projects/libre-fonts/" class="grid-card__title">Free and Open Source Font Projects</a>
+            <a href="https://github.com/mooniak" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>
+          </div>
+          <div class="grid-card__meta">
+            <span>Font engineering</span>
+            
+            <span>2013–2099</span>
+          </div>
+          <p class="grid-card__desc">Ongoing contributions to free and open-source font projects for Sinhala and South Asian scripts.</p>
+        </div>
+      </article>
+      
+      
+      
+      <article class="grid-card"
+        data-category="designer"
+        data-subcat="font-engineering"
+        data-type="client-work"
+        data-epoch="early-youth"
+        data-status="completed"
+        data-year="2013">
+        <div class="grid-card__thumb">
+          <a href="/projects/google-fonts-consultancy/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--designer">FONT</span>
+            
+          </a>
+        </div>
+        <div class="grid-card__info">
+          <div class="grid-card__title-row">
+            <a href="/projects/google-fonts-consultancy/" class="grid-card__title">Google Fonts Consultancy</a>
+            <a href="https://fonts.google.com" class="grid-card__ext" target="_blank" rel="noopener" aria-label="External link">↗</a>
+          </div>
+          <div class="grid-card__meta">
+            <span>Font engineering</span>
+            
+            <span>2013–2015</span>
+          </div>
+          <p class="grid-card__desc">Type design and consultancy for Google Fonts covering the South Asian / Indian region.</p>
+        </div>
+      </article>
+      
+      
+      
+      <article class="grid-card"
+        data-category="designer"
+        data-subcat="media production"
+        data-type="design writing"
+        data-epoch="teenage"
+        data-status="ongoing"
+        data-year="2009">
+        <div class="grid-card__thumb">
+          <a href="/projects/scribble-copy/">
+            
+            <span class="grid-card__placeholder grid-card__placeholder--designer">MEDI</span>
+            
+          </a>
+        </div>
+        <div class="grid-card__info">
+          <div class="grid-card__title-row">
+            <a href="/projects/scribble-copy/" class="grid-card__title">Kirula Magazine</a>
+            
+          </div>
+          <div class="grid-card__meta">
+            <span>Media production</span>
+            
+            <span>2009–2009</span>
+          </div>
+          <p class="grid-card__desc">Editing, desinging and producing Kirula, a trilingual magazine at Royal College, Colombo.</p>
         </div>
       </article>
       
@@ -737,16 +1236,19 @@
 
 <script>
 (function () {
-  var cards = Array.from(document.querySelectorAll('.grid-card'));
-  var countEl = document.getElementById('visible-count');
-  var active = { category: 'all', subcat: 'all', type: 'all' };
+  var container = document.getElementById('projects-list');
+  var cards     = Array.from(container.querySelectorAll('.grid-card'));
+  var countEl   = document.getElementById('visible-count');
+  var active    = { category: 'all', subcat: 'all', type: 'all', epoch: 'all', status: 'all' };
 
   function applyFilters() {
     var n = 0;
     cards.forEach(function (c) {
       var show = (active.category === 'all' || c.dataset.category === active.category)
               && (active.subcat   === 'all' || c.dataset.subcat    === active.subcat)
-              && (active.type     === 'all' || c.dataset.type      === active.type);
+              && (active.type     === 'all' || c.dataset.type.split(/\s+/).includes(active.type))
+              && (active.epoch    === 'all' || c.dataset.epoch     === active.epoch)
+              && (active.status   === 'all' || c.dataset.status    === active.status);
       c.style.display = show ? '' : 'none';
       if (show) n++;
     });
@@ -760,6 +1262,30 @@
       pill.classList.add('active');
       active[group] = pill.dataset.filter;
       applyFilters();
+    });
+  });
+
+  /* Sort toggle */
+  var sortAsc = false;
+  var sortBtn = document.getElementById('sort-btn');
+  sortBtn.addEventListener('click', function () {
+    sortAsc = !sortAsc;
+    sortBtn.textContent = sortAsc ? '↑ Oldest' : '↓ Newest';
+    sortBtn.classList.toggle('view-btn--active', sortAsc);
+    cards.sort(function (a, b) {
+      var ya = parseInt(a.dataset.year) || 0;
+      var yb = parseInt(b.dataset.year) || 0;
+      return sortAsc ? ya - yb : yb - ya;
+    });
+    cards.forEach(function (c) { container.appendChild(c); });
+  });
+
+  /* View toggle */
+  document.querySelectorAll('.view-btn[data-view]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.view-btn[data-view]').forEach(function (b) { b.classList.remove('view-btn--active'); });
+      btn.classList.add('view-btn--active');
+      container.classList.toggle('view-list', btn.dataset.view === 'list');
     });
   });
 }());
